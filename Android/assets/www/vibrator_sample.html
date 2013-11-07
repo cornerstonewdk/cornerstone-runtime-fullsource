@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport"
+	context="width-divice-width, initial-scele-1.0, user-scalble=no">
+<script type="text/javascript" charset="utf-8" src="../sktjs/SRT-0.1.js"></script>
+<title>Vibrate</title>
+<script type="text/javascript">
+function vibratetime(){
+	navigator.vibrate(2000);
+}
+function vibratepattern(){
+	navigator.vibrate([500,30,1000]);
+}
+</script>
+</head>
+<hr> Vibrator API Test<BR>
+<a href="file:///android_asset/www/index.html" >back</a><hr>
+<button onclick="vibratetime();">vibrate(time)</button><br>
+<button onclick="vibratepattern();">vibrate(pattern)</button><br>
+</body>
+</html>

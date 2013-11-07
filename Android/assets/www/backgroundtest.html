@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport"
+	context="width-divice-width, initial-scele-1.0, user-scalble=no">
+<script type="text/javascript" charset="utf-8" src="../sktjs/SRT-0.1.js"></script>
+<script type="text/javascript" charset="utf-8" src="../sktjs/background.js"></script>
+<title>Background</title>
+<script type="text/javascript">
+function alerttest(){
+	alert("test");
+}
+function fortest(){
+	function test(testmsg){
+		document.getElementById("worker_say").innerHTML=testmsg;		
+	}
+	window.plugins.BackgroundApis.forapi(test,{start:1,end:100001});
+}
+function forteststop(){
+	window.plugins.BackgroundApis.forstopapi();
+}
+
+function fibotest(){
+	function sc(val){
+		alert("the return value is " + val.value + " and running time is " + val.time + " milliseconds");
+	}
+	
+	window.plugins.BackgroundApis.fibonacci(sc,35);
+}
+</script>
+</head>
+<hr> BackgroundApis API Test<BR>
+<a href="file:///android_asset/www/index.html" >back</a><hr>
+<button onclick="fibotest();">fibonacci test</button><br>
+<button onclick="fortest();">for test</button><br>
+<button onclick="forteststop();">for test stop</button><br>
+<button onclick="alerttest();">aler ttest</button><br>
+ <p id="worker_say">Say</p>
+ <textarea rows="4" cols="60">test</textarea>
+</body>
+</html>

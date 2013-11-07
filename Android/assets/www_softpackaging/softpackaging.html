@@ -1,0 +1,224 @@
+
+<!doctype html>
+<html>
+<head>
+<meta charset=utf-8>
+<link rel='stylesheet' href='./dist/lib/bootstrap/css/bootstrap.css' />
+<link rel='stylesheet'
+	href='./dist/lib/bootstrap/css/bootstrap-responsive.css' />
+<link rel='stylesheet' href='./dist/ui/theme/dark/css/cornerstone.css' />
+<link rel='stylesheet' href='./dist/ui/widget-chart.css' />
+<link rel='stylesheet' href='./dist/ui/widget-media.css' />
+<link rel='stylesheet' href='./dist/ui/widget-scrollview.css' />
+<link rel='stylesheet' href='./dist/ui/widget-datatable.css' />
+<link rel='stylesheet' href='./dist/ui/widget-editor.css' />
+<link rel='stylesheet' href='./etc.css' />
+<script src='./dist/lib/jquery-1.8.1.min.js'></script>
+<script src='./dist/ui/widget-chart.js'></script>
+<script src='./dist/ui/widget-datatable.js'></script>
+<script src='./dist/ui/widget-editor.js'></script>
+<script src='./dist/ui/widget-listview.js'></script>
+<script src='./dist/ui/widget-media.js'></script>
+<script src='./dist/ui/widget-plugins.js'></script>
+<script src='./dist/ui/widget-scrollview.js'></script>
+<script type="text/javascript" charset="utf-8" src="./SRT-0.9.3.js"></script>
+</head>
+
+<body
+	style='padding-top: 15px; padding-bottom: 15px; padding-left: 15px; padding-right: 15px;'>
+
+	<!--------------------------------------- 예제 코드 시작 --------------------------------------->
+
+	<div id="intro">
+		<div class="wrapper" style = "font-size:smaller; position:absolute; width:300px; height:200px; top:50%; left:50%; margin-left:-150px; margin-top:-250px;">
+			<h1 align="center">Cornerstone</h1><br>
+			<img src="img/cornerstone.png" align="middle"  />
+			<br><br><h5 align="center">Highly Mobile-Centered HTML5 Web App Development Kit</h5>
+		</div>
+	</div>
+
+	<div id=main style="display: none;">
+		<div class="page-header">
+			<h1>
+				Cornerstone<small> - Soft Packaging</small>
+			</h1>
+		</div>
+
+		<div id="init" style="display: display;">
+			<br>
+			<h4>- SoftPackaging 업데이트 사항을 확인중 입니다.</h4>
+		</div>
+
+		<div id="progressbar" style="display: none;">
+			<br>
+			<h4>SortPackaging 이 진행 중입니다. 잠시 기다려 주세요.</h4>
+			<div id="downloadbar" class="progress">
+				<div id="barprogress" class="bar" style="width: 0%;"></div>
+			</div>
+		</div>
+
+		<div id="buttons" style="display: none;">
+			<h4>
+				<p class="text-success">Cornerstone 소프트패키징은 하이브리드 앱을 재
+					패키징 하지 않아도 웹앱 의 변경 사항을 확인 할 수 있는 기능입니다.</p>
+			</h4>
+			<h4>
+				<p class="text-info">Cornerstone Git와 연동하여 재패키징 없이 손쉽게 웹앱을 업데이트
+					및 확인 할 수 있습니다.
+			</h4>
+			<h4>
+				<p class="text-error">Cornerstone GIT에 변경 사항이 있습니다.
+			</h4>
+			<h5 id="localversionh5"></h5>
+			<h5 id="serverversionh5"></h5>
+			<h5 id="urlh5"></h5>
+			<br>
+				<h5>
+				업데이트 하시려면 아래 버튼을 눌러 주세요.<br>
+				가입하신 요금제에 따라 데이터 통화료가 발 생할 수 있습니다. 
+				</h5>
+				<button type="button" id="btn_update"
+					class="btn btn-primary btn-large" style="width: 100%;">
+					소프트 패키징 업데이트</button>
+				<h5>
+					업데이트를 무시하려면 아래 버튼을 눌러 주세요.
+					</h3>
+					<button type="button" id="btn_ignore"
+						class="btn btn-danger btn-large" style="width: 100%;">
+						이번에는 무시하기</button>
+		</div>
+	</div>
+
+
+	<!---------------------------------------- 예제 코드 끝 ---------------------------------------->
+
+	<script type='text/javascript'>
+		$(function() {
+			function ifrm_resize(height) {
+				var id = 'preview_prv_1';
+				var example1 = window.parent.document.getElementById(id);
+				$(example1).css({
+					height : height + 30
+				});
+			}
+
+			var height = $('body').height();
+			ifrm_resize(height);
+
+			$(window.parent).on('resize', function() {
+				var height = $('body').height();
+				ifrm_resize(height);
+			});
+		});
+
+		var clientVer;
+		var clientGIT;
+		var serverVer;
+		var serverGIT;
+		var serverCheckGIT;
+
+		function checksoftpackagingVer() {
+			var xhr2 = new XMLHttpRequest();
+
+			//for Android
+			clientVer = navigator.preferences.getItem("softpackagingVer");
+			clientGIT = navigator.preferences.getItem("softpackagingURL");
+			serverCheckGIT = navigator.preferences.getItem("softpackagingCheckURL");
+
+			xhr2.onreadystatechange = function() {
+				if (xhr2.readyState == 4 && xhr2.status == 200) {
+					var res = xhr2.responseText;
+					var serverJson = $.parseJSON(res);
+					serverVer = serverJson.version;
+					serverGIT = serverJson.url;
+					
+					//alert("server version : " + serverJson.version);
+					//alert("client version : " + clientVer);
+					
+					if (serverJson.version > clientVer) {
+						$('#init').hide();
+						$('#buttons').show();
+						
+						$('#localversionh5').html('Soft Packaging Client Version : ' + clientVer);
+						$('#serverversionh5').html('Soft Packaging Server Version : ' + serverVer);
+						$('#urlh5').html('Soft Packaging GIT URL : <br> - ' + serverGIT);
+
+					} else {
+						//for Android
+						function sc(name) {
+							location.href = "file:///data/data/" + name
+									+ "/hydapp/index.html";
+							navigator.deviceinteraction.clearHistory();
+						}
+						navigator.deviceinteraction.getPackageName(sc, null);
+
+						//for iOS
+						//TODO 
+					}
+				}
+				else if (xhr2.readyState == 4 && xhr2.status == 404) {
+					alert("404 Error :: 업데이트 check URL을 확인 할 수 없습니다.");
+					function sc(name) {
+						location.href = "file:///data/data/" + name
+								+ "/hydapp/index.html";
+						navigator.deviceinteraction.clearHistory();
+					}
+					navigator.deviceinteraction.getPackageName(sc, null);
+				}
+			};
+			
+			xhr2.open("get",serverCheckGIT,true);
+			xhr2.send();
+		}
+
+		$('#btn_update').on('click', function() {
+			$('#progressbar').show();
+			$('#buttons').hide();
+
+			function sc(progress) {
+				$('#barprogress').css({
+					'width' : progress + '%'
+				});
+			}
+			navigator.preferences.setItem("softpackagingVer",serverVer);
+			navigator.preferences.setItem("softpackagingURL",serverGIT);
+			navigator.deviceinteraction.hydrationupdate(sc, null);
+			navigator.deviceinteraction.clearHistory();
+
+
+		});
+		$('#btn_ignore').on(
+				'click',
+				function() {
+					//for android 
+					function sc(name) {
+						location.href = "file:///data/data/" + name
+								+ "/hydapp/index.html";
+						navigator.deviceinteraction.clearHistory();
+					}
+					navigator.deviceinteraction.getPackageName(sc, null);
+
+					//for iOS
+					//TODO 
+				});
+
+		function onDeviceReady() {
+			// 초기  화면 보이기
+			
+			setTimeout(function() {
+				$('#intro').hide();
+				$('#main').show();
+
+				var isupdate = checksoftpackagingVer();
+
+			}, 2000);
+
+			var currenturl = navigator.getCurrentURL();
+
+		}
+
+		document.addEventListener("deviceready", onDeviceReady, false);
+	</script>
+
+</body>
+</html>

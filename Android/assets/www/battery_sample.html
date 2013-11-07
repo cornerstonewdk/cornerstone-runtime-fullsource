@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport"
+	context="width-divice-width, initial-scele-1.0, user-scalble=no">
+<script type="text/javascript" charset="utf-8" src="../sktjs/SRT-0.1.js"></script>
+<title>Battery Sample</title>
+<script type="text/javascript">
+	function onBatteryStatus() {
+		// Handle the online event
+		alert("navigator.battery.charging = " + navigator.battery.charging);
+		alert("navigator.battery.level = " + navigator.battery.level);
+		console.log("Level: " + navigator.battery.level + " isPlugged: " + navigator.battery.charging);
+	}
+
+	function unregister_battery() {
+		navigator.battery.removeEventListener("chargingchange", onBatteryStatus,false);
+	}
+
+	function register_battery() {
+
+		//	navigator.battery.addEventListener("levelchange", onBatteryStatus, false);
+		//		function onBatteryStatus() {
+		//		    // Handle the online event
+		//			alert("navigator.battery.level = " + navigator.battery.level);
+		//		    console.log("Level: " + navigator.battery.level + " isPlugged: " + navigator.battery.charging); 
+		//		}
+
+		//test battery charging 
+		navigator.battery.addEventListener("chargingchange", onBatteryStatus,false);
+		
+	}
+</script>
+</head>
+<hr> Battery API Test<BR>
+<a href="file:///android_asset/www/index.html" >back</a><br><hr>
+<button onclick="register_battery();">register_battery</button><br>
+<button onclick="unregister_battery();">unregister_battery</button><br>
+</body>
+</html>

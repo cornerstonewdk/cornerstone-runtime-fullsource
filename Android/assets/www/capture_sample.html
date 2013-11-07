@@ -1,0 +1,27 @@
+<hr>
+Media Capture API Test
+<BR>
+<form enctype="multipart/form-data" method="post">
+	<a href="file:///android_asset/www/index.html">back</a>
+	<hr>
+	<h2>Regular file upload</h2>
+	<input type="file"></input>
+
+	<h2>capture=camera</h2>
+	<input type="file" accept="image/*;capture=camera"></input>
+
+	<h2>capture=camcorder</h2>
+	<input type="file" accept="video/*;capture=camcorder"></input>
+
+	<h2>capture=microphone</h2>
+	<input type="file" accept="audio/*;capture=microphone"></input>
+
+	<h2>capture=test</h2>
+	<form action="server.cgi" method="post" enctype="multipart/form-data">
+		<input type="file" name="image" accept="image/*" capture> <input
+			type="submit" value="Upload">
+	</form>
+	
+	<h2>chisu test</h2>
+	<input type="file" name="image" accept="image/*" capture>
+</form>

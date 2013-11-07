@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport"
+	context="width-divice-width, initial-scele-1.0, user-scalble=no">
+<script type="text/javascript" charset="utf-8" src="../sktjs/SRT-0.1.js"></script>
+<title>ScreenCapture API</title>
+<script type="text/javascript">
+	function screenCapture() {
+		// define the success callback
+		 function screenshotsuccessCB(filename) {
+		        alert("The Screenshot is captured by name : " + filename);
+		        var imgDest = document.getElementById("captureimg");
+				imgDest.setAttribute("src", filename + "?" + new Date().getTime());
+		 }
+
+		 // define the error callback
+		 function errorCB(response) {
+		        alert( "The following error: " +  response + ", occurred");
+		 } 
+
+		navigator.screenshot.captureScreenshot(screenshotsuccessCB, errorCB , "testsh11.png" , false , 0 , 0 , 50 , 100 );
+		//navigator.screenshot.captureScreenshot(screenshotsuccessCB, errorCB , "testsh12.png" , false , 0 , 0 , 10000 , 50 );
+		//navigator.screenshot.captureScreenshot(screenshotsuccessCB, errorCB , "testsh11.png" , false );
+		//navigator.screenshot.captureScreenshot(screenshotsuccessCB, errorCB , "testsh12.png" , false , 200 , 200 , 50 , 50 );
+	}
+	
+	function screenCaptureUseCrop() {
+		// define the success callback
+		 function screenshotsuccessCB(filename) {
+		        alert("The Screenshot is captured by name : " + filename);
+		        var imgDest = document.getElementById("captureimg");
+				imgDest.setAttribute("src", filename + "?" + new Date().getTime());
+		 }
+
+		 // define the error callback
+		 function errorCB(response) {
+		        alert( "The following error: " +  response + ", occurred");
+		 } 
+
+		navigator.screenshot.captureScreenshot(screenshotsuccessCB, errorCB , "testsh11.png" , true);
+	}
+	
+</script>
+</head>
+<hr>
+ScreenCapture API Test
+<BR>
+<a href="file:///android_asset/www/index.html">back</a>
+<br>
+<button onclick="screenCapture();">screenCapture</button>
+<button onclick="screenCaptureUseCrop();">screenCaptureUseCrop</button>
+<br>
+<br>
+<img id="captureimg" witdh="300px" height="300px" src = "file://mnt/sdcard/DCIM/Camera/K-1.jpg"></img>
+
+<h1>This is test text</h1>
+</body>
+</html>

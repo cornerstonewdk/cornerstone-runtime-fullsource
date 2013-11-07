@@ -1,0 +1,715 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport"
+	context="width-divice-width, initial-scele-1.0, user-scalble=no">
+<script type="text/javascript" charset="utf-8" src="../sktjs/SRT-0.1.js"></script>
+<title>FileSystem</title>
+<script type="text/javascript">
+	function requestFileSystemtest() {
+		function onFileSystemSuccess(fileSystem) {
+			console.log(fileSystem.name);
+			console.log(fileSystem.root.name);
+		}
+
+		function fail(error) {
+			console.log(error.code);
+		}
+
+		//test 1
+		//window.requestFileSystem(LocalFileSystem.PERSISTENT, 0,
+		//		onFileSystemSuccess, fail);
+		
+		//test 2 
+		window.requestFileSystem(LocalFileSystem.TEMPORARY, 1024 * 1024,
+				onFileSystemSuccess, fail);
+	}
+
+	function resolveLocalFileSystemURItest() {
+		function onResolveSuccess(fileEntry) {
+			console.log(fileEntry.name);
+			console.log(fileEntry.fullPath);
+			
+			function success(metadata) {
+			    console.log("Last Modified: " + metadata.modificationTime);
+			    console.log("Size: " + metadata.size);
+			}
+			function fail(error) {
+			        console.log(error.code);
+			}
+			
+			//test getMetadata for fileEntry
+			fileEntry.getMetadata(success,fail);
+		}
+
+		function fail(error) {
+			console.log(error.message);
+		}
+
+		window.resolveLocalFileSystemURI("file://sdcard/example.txt",
+				onResolveSuccess, fail);
+	}
+	
+	function getMetadata() {
+		function success(metadata) {
+		    console.log("Last Modified: " + metadata.modificationTime);
+		    console.log("Size: " + metadata.size);
+		}
+		function fail(error) {
+		        console.log(error.code);
+		}
+		function onFileSystemSuccess(fileSystem) {
+		        console.log(fileSystem.name);
+		        console.log(fileSystem.root.name);
+		       // Request the metadata object for this entry
+		        fileSystem.root.getMetadata(success, fail);
+		}
+		window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, onFileSystemSuccess, fail);
+	}
+	
+	function fileMoveTo() {
+		function onResolveSuccess(fileEntry) {
+			console.log(fileEntry.name);
+			console.log(fileEntry.fullPath);
+			
+			function success(entry) {
+			    console.log("New Path: " + entry.fullPath);
+			}
+
+			function fail(error) {
+			    alert(error.code);
+			}
+			
+			var parentEntry = new DirectoryEntry("movetest","file://sdcard/skruntime/movetest");
+			
+			fileEntry.moveTo(parentEntry,"movedfile.txt",success,fail);
+		}
+
+		function fail(error) {
+			console.log(error.code);
+		}
+
+		window.resolveLocalFileSystemURI("file://sdcard/skruntime/filetest/example.txt",
+				onResolveSuccess, fail);
+	}
+	
+	function dirMoveTo() {
+		function onResolveSuccess(dirEntry) {
+			console.log(dirEntry.name);
+			console.log(dirEntry.fullPath);
+			
+			function success(entry) {
+			    console.log("New Path: " + entry.fullPath);
+			}
+
+			function fail(error) {
+			    alert(error.code);
+			}
+			
+			var parentEntry = new DirectoryEntry("skruntime","file://sdcard/skruntime");
+			
+			dirEntry.moveTo(parentEntry,"movedir",success,fail);
+		}
+
+		function fail(error) {
+			console.log(error.message);
+		}
+
+		window.resolveLocalFileSystemURI("file://sdcard/skruntime/filetest",
+				onResolveSuccess, fail);
+	}
+	
+	function fileCopyTo() {
+		function onResolveSuccess(fileEntry) {
+			console.log(fileEntry.name);
+			console.log(fileEntry.fullPath);
+			
+			function success(entry) {
+			    console.log("New Path: " + entry.fullPath);
+			}
+
+			function fail(error) {
+			    alert(error.code);
+			}
+			
+			var parentEntry = new DirectoryEntry("copytest","file://sdcard/skruntime/copytest");
+			
+			fileEntry.copyTo(parentEntry,"copyed.txt",success,fail);
+		}
+
+		function fail(error) {
+			console.log(error.message);
+		}
+
+		window.resolveLocalFileSystemURI("file://sdcard/skruntime/filetest/example.txt",
+				onResolveSuccess, fail);
+	}
+	
+	function dirCopyTo() {
+		function onResolveSuccess(dirEntry) {
+			console.log(dirEntry.name);
+			console.log(dirEntry.fullPath);
+			
+			function success(entry) {
+			    console.log("New Path: " + entry.fullPath);
+			}
+
+			function fail(error) {
+			    alert(error.code);
+			}
+			
+			var parentEntry = new DirectoryEntry("skruntime","file://sdcard/skruntime");
+			
+			dirEntry.copyTo(parentEntry,"copyeddir",success,fail);
+		}
+
+		function fail(error) {
+			console.log(error.message);
+		}
+
+		window.resolveLocalFileSystemURI("file://sdcard/skruntime/filetest",
+				onResolveSuccess, fail);
+	}
+	
+	function filetoURL() {
+		function onResolveSuccess(fileEntry) {
+			console.log(fileEntry.name);
+			console.log(fileEntry.fullPath);
+			
+			// Get the URL for this directory
+	        var filrURL =  fileEntry.toURL();
+	        console.log(filrURL);
+		}
+
+		function fail(error) {
+			console.log(error.message);
+		}
+
+		window.resolveLocalFileSystemURI("file://sdcard/skruntime/filetest/example.txt",
+				onResolveSuccess, fail);
+	}
+	
+	function dirtoURL() {
+		function onResolveSuccess(dirEntry) {
+			console.log(dirEntry.name);
+			console.log(dirEntry.fullPath);
+			
+			// Get the URL for this directory
+	        var dirURL =  dirEntry.toURL();
+	        console.log(dirURL);
+		}
+
+		function fail(error) {
+			console.log(error.message);
+		}
+
+		window.resolveLocalFileSystemURI("file://sdcard/skruntime/filetest",
+				onResolveSuccess, fail);
+	}
+	
+	function fileRemove() {
+		function onResolveSuccess(fileEntry) {
+			console.log(fileEntry.name);
+			console.log(fileEntry.fullPath);
+			
+			function success() {
+			    console.log("Removal succeeded");
+			}
+			function fail(error) {
+			        console.log(error.code);
+			}
+			
+			//remove file
+			fileEntry.remove(success,fail);
+		}
+
+		function fail(error) {
+			console.log(error.message);
+		}
+
+		window.resolveLocalFileSystemURI("file://sdcard/skruntime/filetest/example.txt",
+				onResolveSuccess, fail);
+	}
+	
+	function dirRemove() {
+		function onResolveSuccess(dirEntry) {
+			console.log(dirEntry.name);
+			console.log(dirEntry.fullPath);
+			
+			function success() {
+			    console.log("Removal succeeded");
+			}
+
+			function fail(error) {
+			    alert('Error removing file: ' + error.code);
+			}
+
+			// remove the Directory
+			dirEntry.remove(success, fail);
+		}
+
+		function fail(error) {
+			console.log(error.message);
+		}
+
+		window.resolveLocalFileSystemURI("file://sdcard/skruntime/filetest",
+				onResolveSuccess, fail);
+	}
+	
+	function fileGetParent() {
+		function onResolveSuccess(fileEntry) {
+			console.log(fileEntry.name);
+			console.log(fileEntry.fullPath);
+			
+			function success(parent) {
+			    console.log("Parent Name: " + parent.name);
+			}
+
+			function fail(error) {
+			    alert('Failed to get parent directory: ' + error.code);
+			}
+
+			// Get the parent FileEntry
+			fileEntry.getParent(success, fail);
+		}
+
+		function fail(error) {
+			console.log(error.message);
+		}
+
+		window.resolveLocalFileSystemURI("file://sdcard/skruntime/filetest/example.txt",
+				onResolveSuccess, fail);
+	}
+	
+	function dirGetParent() {
+		function onResolveSuccess(dirEntry) {
+			console.log(dirEntry.name);
+			console.log(dirEntry.fullPath);
+			
+			function success(parent) {
+			    console.log("Parent Name: " + parent.name);
+			}
+
+			function fail(error) {
+			    alert('Failed to get parent directory: ' + error.code);
+			}
+
+			// Get the parent DirectoryEntry
+			dirEntry.getParent(success, fail);
+		}
+
+		function fail(error) {
+			console.log(error.message);
+		}
+
+		window.resolveLocalFileSystemURI("file://sdcard/skruntime/filetest",
+				onResolveSuccess, fail);
+	}
+	
+	function createDirReaderAndreadEntries() {
+		function onResolveSuccess(dirEntry) {
+			console.log(dirEntry.name);
+			console.log(dirEntry.fullPath);
+			
+			function success(entries) {
+			    var i;
+			    for (i=0; i<entries.length; i++) {
+			        console.log(entries[i].name);
+			    }
+			}
+
+			function fail(error) {
+			    alert("Failed to list directory contents: " + error.code);
+			}
+
+			// Get a directory reader
+			var directoryReader = dirEntry.createReader();
+			// Get a list of all the entries in the directory
+			directoryReader.readEntries(success,fail);
+
+		}
+
+		function fail(error) {
+			console.log(error.message);
+		}
+
+		//window.resolveLocalFileSystemURI("file://sdcard",
+		window.resolveLocalFileSystemURI("file://sdcard/skruntime/filetest",
+				onResolveSuccess, fail);
+	}
+	
+	function getDirectory() {
+		function onResolveSuccess(dirEntry) {
+			console.log(dirEntry.name);
+			console.log(dirEntry.fullPath);
+			
+			function success(entry) {
+			    console.log("entry Name: " + entry.name);
+			}
+
+			function fail(error) {
+			    alert("Unable to create new directory: " + error.code);
+			}
+
+			// Retrieve an existing directory, or create it if it does not already exist
+			dirEntry.getDirectory("newDir", {create: true, exclusive: false}, success, fail);
+
+		}
+
+		function fail(error) {
+			console.log(error.message);
+		}
+
+		//window.resolveLocalFileSystemURI("file://sdcard",
+		window.resolveLocalFileSystemURI("file://sdcard/skruntime/filetest",
+				onResolveSuccess, fail);
+	}
+	
+	function getFile() {
+		function onResolveSuccess(dirEntry) {
+			console.log(dirEntry.name);
+			console.log(dirEntry.fullPath);
+			
+			function success(entry) {
+			    console.log("entry Name: " + entry.name);
+			}
+
+			function fail(error) {
+			    alert("Unable to create new directory: " + error.code);
+			}
+
+			// Retrieve an existing file, or create it if it does not exist
+			dirEntry.getFile("newFile.txt", {create: true, exclusive: false}, success, fail);
+
+		}
+
+		function fail(error) {
+			console.log(error.message);
+		}
+
+		//window.resolveLocalFileSystemURI("file://sdcard",
+		window.resolveLocalFileSystemURI("file://sdcard/skruntime/filetest",
+				onResolveSuccess, fail);
+	}
+	
+	function removeRecursively() {
+		function onResolveSuccess(dirEntry) {
+			console.log(dirEntry.name);
+			console.log(dirEntry.fullPath);
+			
+			function success() {
+			    console.log("Remove Recursively Succeeded");
+			}
+
+			function fail(error) {
+			    alert("Failed to remove directory or it's contents: " + error.code);
+			}
+
+			// remove the directory and all it's contents
+			dirEntry.removeRecursively(success, fail);
+
+		}
+
+		function fail(error) {
+			console.log(error.message);
+		}
+
+		//window.resolveLocalFileSystemURI("file://sdcard",
+		window.resolveLocalFileSystemURI("file://sdcard/skruntime/removetest",
+				onResolveSuccess, fail);
+	}
+	
+	function filefromfileentry() {
+		function onResolveSuccess(fileEntry) {
+			console.log(fileEntry.name);
+			console.log(fileEntry.fullPath);
+			
+			function success(file) {
+			    console.log("File name: " + file.name);
+			    console.log("File lastModifiedDate: " + file.lastModifiedDate);
+			    console.log("File size: " + file.size);
+			    console.log("File type: " + file.type);
+			}
+
+			function fail(error) {
+			    alert("Unable to retrieve file properties: " + error.code);
+			}
+
+			// obtain properties of a file
+			fileEntry.file(success, fail);
+		}
+
+		function fail(error) {
+			console.log(error.message);
+		}
+
+		window.resolveLocalFileSystemURI(
+				"file://sdcard/skruntime/filetest/example.txt",
+				onResolveSuccess, fail);
+	}
+	
+	function createWirterAndWrite() {
+		function onResolveSuccess(fileEntry) {
+			console.log(fileEntry.name);
+			console.log(fileEntry.fullPath);
+
+			function success(writer) {
+				writer.onabort = function(evt) {
+					console.log("onabort");
+					console.log("readyState = " + evt.target.readyState);
+					console.log("position = " + evt.target.position);
+					console.log("length = " + evt.target.length);			
+				};
+				writer.onerror = function(evt) {
+					console.log("onerror");
+					console.log("readyState = " + evt.target.readyState);
+					console.log("position = " + evt.target.position);
+					console.log("length = " + evt.target.length);			
+				};
+				writer.onprogress = function(evt) {
+					console.log("onprogress");
+					console.log("readyState = " + evt.target.readyState);
+					console.log("position = " + evt.target.position);
+					console.log("length = " + evt.target.length);			
+				};
+				writer.onwrite = function(evt) {
+					console.log("onwrite");
+					console.log("readyState = " + evt.target.readyState);
+					console.log("position = " + evt.target.position);
+					console.log("length = " + evt.target.length);			
+				};
+				writer.onwriteend = function(evt) {
+					console.log("onwriteend");
+					console.log("readyState = " + evt.target.readyState);
+					console.log("position = " + evt.target.position);
+					console.log("length = " + evt.target.length);			
+				};
+				writer.onwritestart = function(evt) {
+					console.log("onwritestart");
+					console.log("readyState = " + evt.target.readyState);
+					console.log("position = " + evt.target.position);
+					console.log("length = " + evt.target.length);			
+				};
+			
+				//test 1 write();
+				//writer.write("Some text to the file this is last word test abort");
+				
+				//test 2 abort();
+				//writer.abort();
+				
+				//test 3 seek();
+				//writer.seek(writer.length);
+				//writer.write("hooing hoogin");
+				
+				//test 4 truncate
+				writer.truncate(10);
+			}
+
+			function fail(error) {
+				alert(error.code);
+			}
+
+			// create a FileWriter to write to the file
+			fileEntry.createWriter(success, fail);
+		}
+
+		function fail(error) {
+			console.log(error.message);
+		}
+
+		window.resolveLocalFileSystemURI(
+				"file://sdcard/skruntime/filetest/example.txt",
+				onResolveSuccess, fail);
+	}
+	
+	function readAsText() {
+		function onResolveSuccess(fileEntry) {
+			console.log(fileEntry.name);
+			console.log(fileEntry.fullPath);
+
+			var reader = new FileReader();
+			reader.onloadstart = function(evt) {
+		        console.log("onloadstart");
+		        console.log(evt.target.result);
+		        console.log(evt.target.readyState);
+		    };
+		    reader.onprogress = function(evt) {
+		        console.log("onprogress");
+		        console.log(evt.target.result);
+		        console.log(evt.target.readyState);
+		    };
+		    reader.onload = function(evt) {
+		        console.log("onload");
+		        console.log(evt.target.result);
+		        console.log(evt.target.readyState);
+		    };
+		    reader.onloadend = function(evt) {
+		        console.log("onloadend");
+		        console.log(evt.target.result);
+		        console.log(evt.target.readyState);
+		    };
+		    reader.onerror = function(evt) {
+		        console.log("onerror");
+		        console.log(evt.target.result);
+		        console.log(evt.target.readyState);
+		    };
+		    reader.onabort = function(evt) {
+		        console.log("onabort");
+		        console.log(evt.target.result);
+		        console.log(evt.target.readyState);
+		    };
+		    
+		    //test 1. readAsText();
+		    reader.readAsText(fileEntry);
+		    
+		    //test 2. readAsDataURL();
+		    //reader.readAsDataURL(fileEntry);
+		    
+		    //test 3. abort();
+		    //reader.abort();
+		}
+
+		function fail(error) {
+			console.log(error.message);
+		}
+
+		window.resolveLocalFileSystemURI(
+				"file://sdcard/skruntime/filetest/example.txt",
+				onResolveSuccess, fail);
+	}
+	
+	function uploadtest() {
+		function onResolveSuccess(fileEntry) {
+			console.log(fileEntry.name);
+			console.log(fileEntry.fullPath);
+
+			// !! Assumes variable fileURI contains a valid URI to a  text file on the device
+			
+			var fileURI = fileEntry.fullPath;
+			
+			var win = function(r) {
+			    console.log("Code = " + r.responseCode);
+			    console.log("Response = " + r.response);
+			    console.log("Sent = " + r.bytesSent);
+			}
+
+			var fail = function(error) {
+				alert("An error has occurred: status = " + error.http_status );
+			    //alert("An error has occurred: Code = " + error.code);
+			    console.log("upload error source " + error.source);
+			    console.log("upload error target " + error.target);
+			}
+
+			var options = new FileUploadOptions();
+			options.fileKey="file";
+			options.fileName=fileURI.substr(fileURI.lastIndexOf('/')+1);
+			options.mimeType="text/plain";
+
+			var params = new Object();
+			params.value1 = "test";
+			params.value2 = "param";
+
+			options.params = params;
+
+			var ft = new FileTransfer();
+			//ft.upload(fileURI, "http://mobile.embider.com/phone/test/anchi/HTML5/upload.php", win, fail, options);
+			ft.upload(fileURI, "http://www.inculab.net/upload.php", win, fail, options);
+		}
+
+		function fail(error) {
+			console.log(error.message);
+		}
+
+		window.resolveLocalFileSystemURI(
+				"file://sdcard/skruntime/filetest/example.txt",
+				onResolveSuccess, fail);
+	}
+	
+	function downloadtest() {
+		function onResolveSuccess(fileEntry) {
+			console.log(fileEntry.name);
+			console.log(fileEntry.fullPath);
+
+			var fileTransfer = new FileTransfer();
+
+			var url = "http://mobile.embider.com/phone/test/anchi/HTML5/cals.js";
+			var filePath = "file://sdcard/skruntime/filetest/cals.js";
+			
+			fileTransfer.download(
+			    url,
+			    filePath,
+			    function(entry) {
+			    	alert("download complete: " + entry.fullPath);
+			        console.log("download complete: " + entry.fullPath);
+			    },
+			    function(error) {
+			    	alert("An error has occurred: status = " + error.http_status );
+			        console.log("download error source " + error.source);
+			        console.log("download error target " + error.target);
+			        console.log("download error code" + error.code);
+			    }
+			);
+		}
+
+		function fail(error) {
+			console.log(error.message);
+		}
+
+		window.resolveLocalFileSystemURI(
+				"file://sdcard/skruntime/filetest/example.txt",
+				onResolveSuccess, fail);
+	}
+</script>
+</head>
+<hr>
+FileSystem API Test
+<BR>
+<a href="file:///android_asset/www/index.html">back</a>
+<hr>
+<button onclick="requestFileSystemtest();">requestFileSystem</button>
+<br>
+<button onclick="resolveLocalFileSystemURItest();">resolveLocalFileSystemURI</button>
+<br>
+<button onclick="getMetadata();">getMetadata</button>
+<br>
+<button onclick="fileMoveTo();">fileMoveTo</button>
+<br>
+<button onclick="fileCopyTo();">fileCopyTo</button>
+<br>
+<button onclick="dirMoveTo();">dirMoveTo</button>
+<br>
+<button onclick="dirCopyTo();">dirCopyTo</button>
+<br>
+<button onclick="filetoURL();">filetoURL</button>
+<br>
+<button onclick="dirtoURL();">dirtoURL</button>
+<br>
+<button onclick="fileRemove();">fileRemove</button>
+<br>
+<button onclick="dirRemove();">dirRemove</button>
+<br>
+<button onclick="fileGetParent();">fileGetParent</button>
+<br>
+<button onclick="dirGetParent();">dirGetParent</button>
+<br>
+<button onclick="createDirReaderAndreadEntries();">createDirReaderAndreadEntries</button>
+<br>
+<button onclick="getDirectory();">getDirectory</button>
+<br>
+<button onclick="getFile();">getFile</button>
+<br>
+<button onclick="removeRecursively();">removeRecursively</button>
+<br>
+<button onclick="createWirterAndWrite();">createWirter,Write,abort,seek,truncate</button>
+<br>
+<button onclick="filefromfileentry();">filefromfileentry</button>
+<br>
+<button onclick="readAsText();">readAsText,readAsDataURL,abort</button>
+<br>
+<button onclick="uploadtest();">uploadtest</button>
+<br>
+<button onclick="downloadtest();">downloadtest</button>
+<br>
+</body>
+</html>

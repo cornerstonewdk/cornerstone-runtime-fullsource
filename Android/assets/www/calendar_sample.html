@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport"
+	context="width-divice-width, initial-scele-1.0, user-scalble=no">
+<script type="text/javascript" charset="utf-8" src="../sktjs/SRT-0.1.js"></script>
+<title>Calendar Sample</title>
+<script type="text/javascript">
+	function addEvent() {
+		function errorCallback(response) {
+			alert("The following error occurred: " + response.code);
+		}
+		function deletesc() {
+			alert("deletesc is called");
+		}
+		function eventAddedCB(event) {
+			alert("CalendarEvent Added with description = " + event.description
+					+ "\nid = " + event.id + "\nstart = " + event.start);
+			//+ event.recurrence.expires + "   reccurence.frequency = " 
+			//+ event.recurrence.frequency);
+
+			function successFind(events) {
+				// do something with resulting list of objects
+				for ( var i in events)
+					alert("event.id = " + events[i].id + "\nevent.start = "
+							+ events[i].start + "\nevent.description = "
+							+ events[i].description + "\nevent.reminder = "
+							+ events[i].reminder);
+			}
+
+			//navigator.calendar.deleteEvent(deletesc,errorCallback,event.id);
+
+			//		navigator.calendar.findEvents( successFind, errorCallback, {});
+			//				  				{ filter: { description: 'HTML5 Introduction',
+			//				  							startAfter: '2012-06-27 09:00' , 
+			//				  							startBefore: '2012-06-29 09:00',
+			//				  							endBefore: '2012-06-28 18:00',
+			//				  							endAfter: '2012-06-27 09:00',
+			//				  							summary:'HTML5 Webinar ', 
+			//				  							reminder: '-3600000', 
+			//				  							status: 'tentative',
+			//				  							location:'Huesca',
+			//				  							start: '2012-06-28 09:00',
+			//				  							end:'2012-06-28 12:00',
+			//				  							}, multiple:true});
+
+		}
+
+		var calEvent = navigator.calendar.createEvent({
+			description : 'HTML5 Introduction',
+			summary : 'HTML5 test ',
+			//start: '2012-06-28T09:00-08:00',   // Event starts on 6 24, 2011 @ 5pm (UTC)
+			//end:'2012-06-28T10:00:00-08:00',// Event ends on 6 24, 2012 @ 6pm (UTC)
+			start : '2012-07-19 09:00',
+			end : '2012-07-19 12:00',
+			//recurrence: {expires:'2012-07-01T01:00:00+01:00',// Event repeats until August 1, 2011 @ 12am (UTC)
+			recurrence : {
+				expires : '2012-08-28',
+				frequency : 'weekly',
+				interval : 1,
+			//exceptionDates :['2012-07-01', '2012-07-03'],
+			//daysInWeek: [0, 3],
+			//daysInMonth:[4,15],
+			//daysInYear: [1,10,150],
+			//weeksInMonth : [1,3]
+			},
+			reminder : '-3600000',
+			status : 'tentative',
+			location : 'SK bundang'
+		});
+
+		navigator.calendar.addEvent(eventAddedCB, errorCallback, calEvent);
+	}
+
+	function findEvent() {
+		function errorCallback(response) {
+			alert("The following error occurred: " + response.code);
+		}
+		function deletesc() {
+			alert("deletesc is called");
+		}
+
+		function successFind(events) {
+
+			alert("Find event successCallback!!");
+
+			// do something with resulting list of objects
+			for ( var i in events)
+				alert("event.id = " + events[i].id + "\nevent.start = "
+						+ events[i].start + "\nevent.description = "
+						+ events[i].description + "\nevent.reminder = "
+						+ events[i].reminder);
+		}
+
+		//navigator.calendar.deleteEvent(deletesc,errorCallback,event.id);
+
+		navigator.calendar.findEvents(successFind, errorCallback, {});
+		//				  				{ filter: { description: 'HTML5 Introduction',
+		//				  							startAfter: '2012-06-27 09:00' , 
+		//				  							startBefore: '2012-06-29 09:00',
+		//				  							endBefore: '2012-06-28 18:00',
+		//				  							endAfter: '2012-06-27 09:00',
+		//				  							summary:'HTML5 Webinar ', 
+		//				  							reminder: '-3600000', 
+		//				  							status: 'tentative',
+		//				  							location:'Huesca',
+		//				  							start: '2012-06-28 09:00',
+		//				  							end:'2012-06-28 12:00',
+		//				  							}, multiple:true});
+
+	}
+	function deleteEvent() {
+		function errorCallback(response) {
+			alert("The following error occurred: " + response.code);
+		}
+		function deletesc() {
+			alert("deletesc is called");
+		}
+
+		function successFind(events) {
+			// do something with resulting list of objects
+			for ( var i in events)
+				alert("event.id = " + events[i].id + "\nevent.start = "
+						+ events[i].start + "\nevent.description = "
+						+ events[i].description + "\nevent.reminder = "
+						+ events[i].reminder);
+
+			alert("we will delete event id = " + events[i].id);
+			navigator.calendar.deleteEvent(deletesc, errorCallback,
+					events[i].id);
+
+		}
+
+		navigator.calendar.findEvents(successFind, errorCallback, {});
+		//				  				{ filter: { description: 'HTML5 Introduction',
+		//				  							startAfter: '2012-06-27 09:00' , 
+		//				  							startBefore: '2012-06-29 09:00',
+		//				  							endBefore: '2012-06-28 18:00',
+		//				  							endAfter: '2012-06-27 09:00',
+		//				  							summary:'HTML5 Webinar ', 
+		//				  							reminder: '-3600000', 
+		//				  							status: 'tentative',
+		//				  							location:'Huesca',
+		//				  							start: '2012-06-28 09:00',
+		//				  							end:'2012-06-28 12:00',
+		//				  							}, multiple:true});
+
+	}
+</script>
+</head>
+<hr>
+Calendar API Test
+<BR>
+<a href="file:///android_asset/www/index.html">back</a>
+<hr>
+<button onclick="addEvent();">addEvent</button>
+<br>
+<button onclick="findEvent();">findEvent</button>
+<br>
+<button onclick="deleteEvent();">deleteEvent</button>
+<br>
+</body>
+</html>

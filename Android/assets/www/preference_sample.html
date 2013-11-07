@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport"
+	context="width-divice-width, initial-scele-1.0, user-scalble=no">
+<script type="text/javascript" charset="utf-8" src="../sktjs/SRT-0.1.js"></script>
+<title>Vibrate</title>
+<script type="text/javascript">
+function setItem(){
+	navigator.preferences.setItem("test","1asdgasdg");
+	navigator.preferences.setItem("test1","21asdgasdg");
+}
+function getItem(){
+	var test = navigator.preferences.getItem("test");
+	alert(test);
+	
+	test = navigator.preferences.getItem("test1");
+	alert(test);
+}
+function removeItemtest(){
+	navigator.preferences.removeItem("test");
+	
+	var test = navigator.preferences.getItem("test");
+	alert(test);
+	
+	test = navigator.preferences.getItem("test1");
+	alert(test);
+}
+function cleartest(){
+	navigator.preferences.clear();
+	
+	var test = navigator.preferences.getItem("test");
+	alert(test);
+}
+</script>
+</head>
+<hr> Vibrator API Test<BR>
+<a href="file:///android_asset/example/index.html" >back</a><hr>
+<button onclick="setItem();">setItem()</button><br>
+<button onclick="getItem();">getItem()</button><br>
+<button onclick="removeItemtest();">removeItemtest()</button><br>
+<button onclick="cleartest();">clear()</button><br>
+</body>
+</html>

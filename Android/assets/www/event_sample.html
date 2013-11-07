@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport"
+	context="width-divice-width, initial-scele-1.0, user-scalble=no">
+<script type="text/javascript" charset="utf-8" src="../sktjs/SRT-0.1.js"></script>
+<title>Event API</title>
+<script type="text/javascript">
+
+document.addEventListener("deviceready", onDeviceReady, false);
+document.addEventListener("pause", onPause, false);
+document.addEventListener("resume", onResume, false);
+document.addEventListener("online", onOnline, false);
+document.addEventListener("offline", onOffline, false);
+//document.addEventListener("backbutton", onBackKeyDown, false);
+//document.addEventListener("menubutton", onMenuButton, false);
+
+
+function unregisterEvent(){
+	document.removeEventListener("pause",onPause, false);
+	document.removeEventListener("resume",onResume, false);
+	document.removeEventListener("online",onOnline, false);
+	document.removeEventListener("offline",onOffline, false);
+	document.removeEventListener("backbutton",onBackKeyDown, false);
+	//document.removeEventListener("menubutton",onMenuButton, false);
+}
+
+function setOverrideBackButton(){
+	document.addEventListener("backbutton", onBackKeyDown, false);	
+}
+function onDeviceReady(){
+	console.log("deviceready");
+}
+function onPause(){
+	console.log("onPause");
+}
+function onResume(){
+	console.log("onResume");
+}
+function onOnline(){
+	console.log("onOnline");
+}
+function onOffline(){
+	console.log("onOffline");
+}
+function onBackKeyDown(){
+	alert("onBackKey");
+	console.log("onBackKey");
+}
+function onMenuButton(){
+	console.log("menubutton");
+}
+
+</script>
+</head>
+<hr>
+Event API Test
+<BR>
+<a href="file:///android_asset/www/index.html">back</a><br>
+<br>
+<button onclick="setOverrideBackButton();">setOverrideBackButton</button>
+<button onclick="unregisterEvent();">unregisterEvent</button>
+<br>
+<br>
+</body>
+</html>

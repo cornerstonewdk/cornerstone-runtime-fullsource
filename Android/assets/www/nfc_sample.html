@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport"
+	context="width-divice-width, initial-scele-1.0, user-scalble=no">
+<script type="text/javascript" charset="utf-8" src="../sktjs/SRT-0.1.js"></script>
+
+<title>NFC API</title>
+
+<script type="text/javascript">
+
+function screenshotsuccessCB() {
+	alert("The NFC TAG is setted!!");
+}
+
+// define the error callback
+function errorCB(response) {
+	alert("The following error: " + response.message + ", occurred");
+}
+
+//test 1
+function setNFCTypeURL() {
+	var url = prompt("input URL");
+	navigator.nfc.maketaginfo(screenshotsuccessCB, errorCB, Nfc.TYPE_URL,url);
+}
+//test 2
+function setNFCTypeURLNULL() {
+	navigator.nfc.maketaginfo(screenshotsuccessCB, errorCB, Nfc.TYPE_URL);
+}
+//test 3
+function setNFCTypeGEO() {
+	var latitude;
+	var longitude;
+	
+	function showMap(position) {
+		// Show a map centered at (position.coords.latitude, position.coords.longitude).
+		latitude = position.coords.latitude;
+		longitude = position.coords.longitude;
+
+		alert(latitude + ":" + longitude);
+
+		navigator.nfc.maketaginfo(screenshotsuccessCB, errorCB,
+				Nfc.TYPE_LOCATION, {
+					latitude : latitude,
+					longitude : longitude
+				});
+	}
+
+	navigator.geolocation.getCurrentPosition(showMap);
+}
+//test 4
+function setNFCTypeContact() {
+
+	navigator.nfc.maketaginfo(screenshotsuccessCB, errorCB, Nfc.TYPE_CONTACT_NUMBER);
+}
+//test 4
+function setNFCTypeIMAGE() {
+
+	navigator.nfc.maketaginfo(screenshotsuccessCB, errorCB, Nfc.TYPE_IMAGE, "file:///sdcard/aa.jpg" );
+}
+
+//test 5 exception ther is nofile
+function setNFCTypeIMAGE2() {
+
+	navigator.nfc.maketaginfo(screenshotsuccessCB, errorCB, Nfc.TYPE_IMAGE, "file:///sdcard/aaaaaaa.jpg" );
+}
+
+//test 5 exception 1mOver
+function setNFCTypeIMAGE3() {
+
+	navigator.nfc.maketaginfo(screenshotsuccessCB, errorCB, Nfc.TYPE_IMAGE, "file:///sdcard/1m.jpg" );
+}
+
+//test 6 read tag 
+function readTagCallback(obj){
+	alert("tag:" + obj.tag);
+	
+	//NFCA
+	//alert("transceive.length:" + obj.transceive.length);
+	//alert("type: " + obj.type);
+	//alert("transceive:" + obj.transceive);
+	//alert("atqa:" + obj.atqa);
+	//alert("maxTransceivelength:" + obj.maxTransceivelength);
+	//alert("sak:" + obj.sak);
+	//alert("timeout:" + obj.timeout);
+	
+	//ISODEP
+	alert("type: " + obj.type);
+	//alert("hiLayerResponse: " + obj.hiLayerResponse);
+	alert("maxTransceivelength: " + obj.maxTransceivelength);
+	//alert("historicalBytes: " + obj.historicalBytes);
+	//alert("transceive: " + obj.transceive);
+}
+function setNFCUseTrue(){
+	if(navigator.nfc.isNFCSupport()){
+		alert("use");
+		  navigator.nfc.setNFCUse(true);
+		}
+	navigator.nfc.setReadTagCallback(readTagCallback);
+}
+
+function setNFCUseFalse(){
+	navigator.nfc.setNFCUse(false);
+}
+
+function setTransceiveMessage(){
+	navigator.nfc.setTransceiveMessage([1,4,5,4,5]);
+}
+
+function transceiveCallback(tag){
+	alert("tagtype::" + tag.type + " tag.transceive:::" + tag.transceive);
+}
+function testSC(tag){
+	alert("tagtype::" + tag.type + " tag.transceive:::" + tag.transceive[0]);
+	if(tag.transceive[0] == "6F060102030405069000"){
+		navigator.nfc.transceive(transceiveCallback,transceiveErrorCallback,["00CA000005"]);
+	}
+}
+function transceiveErrorCallback(e){
+	alert(e);	
+}
+
+function Select_Test_Applet(){
+	navigator.nfc.transceive(testSC,transceiveErrorCallback,
+							  [
+	                          "00A4040006112233445566", //IsoDep
+	                          //"3000", // NFCA
+	                          ]);
+}
+
+function getData(){
+	navigator.nfc.transceive(transceiveCallback,transceiveErrorCallback,
+							  [
+	                          //"00A4040006112233445566",
+	                          "00CA000005",
+	                          ]);
+}
+
+function updateRecord1(){
+	navigator.nfc.transceive(transceiveCallback,transceiveErrorCallback,
+							  [
+	                          //"00A4040006112233445566",
+	                          "00DC000010112233445566778899AABBCCDDEEFF00",
+	                          ]);
+}
+
+function updateRecord2(){
+	navigator.nfc.transceive(transceiveCallback,transceiveErrorCallback,
+							  [
+	                          //"00A4040006112233445566",
+	                          "00DC00001000FFEEDDCCBBAA998877665544332211",
+	                          ]);
+}
+
+function readRecord(){
+	navigator.nfc.transceive(transceiveCallback,transceiveErrorCallback,
+							  [
+	                          //"00A4040006112233445566",
+	                          "00B2000010",
+	                          ]);
+}
+
+function echoCommand1(){
+	navigator.nfc.transceive(transceiveCallback,transceiveErrorCallback,
+							  [
+	                          //"00A4040006112233445566",
+	                          "00EE000010112233445566778899AABBCCDDEEFF00",
+	                          ]);
+}
+
+function echoCommand2(){
+	navigator.nfc.transceive(transceiveCallback,transceiveErrorCallback,
+							  [
+	                          //"00A4040006112233445566",
+	                          "00EE000050112233445566778899AABBCCDDEEFF00112233445566778899AABBCCDDEEFF00112233445566778899AABBCCDDEEFF00112233445566778899AABBCCDDEEFF00112233445566778899AABBCCDDEEFF00",
+	                          ]);
+}
+
+function echoCommand3(){
+	navigator.nfc.transceive(transceiveCallback,transceiveErrorCallback,
+							  [
+	                          //"00A4040006112233445566",
+	                          "00EE000080112233445566778899AABBCCDDEEFF00112233445566778899AABBCCDDEEFF00112233445566778899AABBCCDDEEFF00112233445566778899AABBCCDDEEFF00112233445566778899AABBCCDDEEFF00112233445566778899AABBCCDDEEFF00112233445566778899AABBCCDDEEFF00112233445566778899AABBCCDDEEFF00",
+	                          ]);
+}
+
+function echoCommand4(){
+	navigator.nfc.transceive(transceiveCallback,transceiveErrorCallback,
+							  [
+	                          //"00A4040006112233445566",
+	                          "00EE0000F0112233445566778899AABBCCDDEEFF00112233445566778899AABBCCDDEEFF00112233445566778899AABBCCDDEEFF00112233445566778899AABBCCDDEEFF00112233445566778899AABBCCDDEEFF00112233445566778899AABBCCDDEEFF00112233445566778899AABBCCDDEEFF00112233445566778899AABBCCDDEEFF00112233445566778899AABBCCDDEEFF00112233445566778899AABBCCDDEEFF00112233445566778899AABBCCDDEEFF00112233445566778899AABBCCDDEEFF00112233445566778899AABBCCDDEEFF00112233445566778899AABBCCDDEEFF00112233445566778899AABBCCDDEEFF00",
+	                          ]);
+}
+
+function transceive1(){
+	navigator.nfc.transceive(transceiveCallback,transceiveErrorCallback,
+							 [
+	                          "00A4040006112233445566",
+	                          //"0084000008",
+	                          //"00CA000005",
+	                          "00DC000010112233445566778899AABBCCDDEEFF00",
+	                          //"00B2000010",
+	                          //"00DC00001000FFEEDDCCBBAA998877665544332211",
+	                          //"00B2000010",
+	                          //"00EE000010112233445566778899AABBCCDDEEFF00",
+	                          //"00EE000050112233445566778899AABBCCDDEEFF00112233445566778899AABBCCDDEEFF00112233445566778899AABBCCDDEEFF00112233445566778899AABBCCDDEEFF00112233445566778899AABBCCDDEEFF00",
+	                          //"00EE0000F0112233445566778899AABBCCDDEEFF00112233445566778899AABBCCDDEEFF00112233445566778899AABBCCDDEEFF00112233445566778899AABBCCDDEEFF00112233445566778899AABBCCDDEEFF00112233445566778899AABBCCDDEEFF00112233445566778899AABBCCDDEEFF00112233445566778899AABBCCDDEEFF00112233445566778899AABBCCDDEEFF00112233445566778899AABBCCDDEEFF00112233445566778899AABBCCDDEEFF00112233445566778899AABBCCDDEEFF00112233445566778899AABBCCDDEEFF00112233445566778899AABBCCDDEEFF00112233445566778899AABBCCDDEEFF00" 
+	                          ]);
+}
+
+function tag_close(){
+	navigator.nfc.tagclose();
+}
+</script>
+</head>
+<hr>
+NFC API Test
+<BR>
+<a href="file:///android_asset/www/index.html">back</a>
+<br>
+<button onclick="setNFCTypeURL();">setNFCTypeURL</button>
+<!-- <button onclick="setNFCTypeURLNULL();">setNFCTypeURLNULL</button> -->
+<!-- <button onclick="setNFCTypeGEO();">setNFCTypeGEO</button> -->
+<button onclick="setNFCTypeContact();">setNFCTypeContact</button>
+<!-- 
+<button onclick="setNFCTypeIMAGE();">setNFCTypeIMAGE</button>
+<button onclick="setNFCTypeIMAGE2();">setNFCTypeIMAGE-nofile</button>
+<button onclick="setNFCTypeIMAGE3();">setNFCTypeIMAGE-1mover</button>
+ -->
+<!-- <button onclick="setNFCTypeIMAGE();">setNFCTypeIMAGE</button> -->
+
+<button onclick="setNFCUseTrue();">setNFCUseTrue</button>
+<button onclick="setNFCUseFalse();">setNFCUseFalse</button>
+<!-- <button onclick="setTransceiveMessage();">setTransceiveMessage</button> -->
+<!-- <button onclick="transceive();">transceive</button> -->
+<button onclick="Select_Test_Applet();">Select_Test_Applet</button><br>
+<button onclick="getData();">getData</button><br>
+<button onclick="updateRecord1();">updateRecord1</button><br>
+<button onclick="updateRecord2();">updateRecord2</button><br>
+<button onclick="readRecord();">readRecord</button><br>
+<button onclick="echoCommand1();">echoCommand1</button><br>
+<button onclick="echoCommand2();">echoCommand2</button><br>
+<button onclick="echoCommand3();">echoCommand3</button><br>
+<button onclick="echoCommand4();">echoCommand4</button><br>
+<button onclick="tag_close();">tag_close</button><br>
+
+
+</body>
+</html>

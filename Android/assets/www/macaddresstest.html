@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport"
+	context="width-divice-width, initial-scele-1.0, user-scalble=no">
+<script type="text/javascript" charset="utf-8" src="../sktjs/SRT-0.1.js"></script>
+<script type="text/javascript" charset="utf-8" src="../sktjs/macaddressplugin.js"></script>
+<title>MacAddressPlugin</title>
+<script type="text/javascript">
+
+function getMacAddress(){
+	var macAddress = window.plugins.MacAddress.getMacAddress();
+	alert("MacAddress = " + macAddress);
+}
+
+function getPhoneNumber(){
+	var phoneNumber = window.plugins.MacAddress.getPhoneNumber();
+	alert("phoneNumber = " + phoneNumber);
+}
+
+function getDeviceID(){
+	var id = window.plugins.MacAddress.getDeviceID();
+	alert("Device id = " + id);
+}
+
+</script>
+</head>
+<hr> MacAddress API Test<BR>
+
+<a href="file:///android_asset/www/index.html" >back</a><hr>
+<button onclick="getMacAddress();">getMacAddress</button><br>
+<button onclick="getPhoneNumber();">getPhoneNumber</button><br>
+<button onclick="getDeviceID();">getDeviceID</button><br>
+</body>
+</html>

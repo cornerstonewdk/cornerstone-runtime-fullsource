@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport"
+	context="width-divice-width, initial-scele-1.0, user-scalble=no">
+<script type="text/javascript" charset="utf-8" src="../sktjs/SRT-0.1.js"></script>
+<title>Capture API</title>
+<script type="text/javascript">
+	function CaptureImage() {
+
+		// capture callback
+
+		function captureSuccess(filename) {
+			// do something with resulting error
+			console.log("Captured Image path:" + filename);
+			var imgDest = document.getElementById("captureimg");
+			imgDest.setAttribute("src", filename + "?" + new Date().getTime());
+		}
+
+		// capture error callback
+		function captureError(err) {
+			// do something with resulting error
+			console.log(err);
+			//alert(err.code);
+		}
+		;
+
+		// start Image capture
+		navigator.capture.captureImage(captureSuccess, captureError, {
+			destinationFilename : "file://sdcard/skruntimetest/test.png",
+			highRes : true
+		});
+
+		//navigator.capture.captureImage(captureSuccess, captureError);
+	}
+
+	function CaptureVideo() {
+		// capture callback
+		function captureSuccess(filename) {
+			// do something with resulting error
+			alert("Captured video path:" + filename);
+		}
+
+		// capture error callback
+		function captureError(err) {
+			// do something with resulting error
+			alert(err.code);
+		}
+		;
+
+		// start Image capture
+		navigator.capture.captureVideo(captureSuccess, captureError, {
+			destinationFilename : "file://sdcard/skruntime/videotest.aaa",
+			highRes : true
+		});
+
+		//navigator.capture.captureVideo(captureSuccess, captureError);
+	}
+
+	function CaptureAudio() {
+		// capture callback
+		function captureSuccess(filename) {
+			// do something with resulting error
+			alert("Captured video path:" + filename);
+		}
+
+		// capture error callback
+		function captureError(err) {
+			// do something with resulting error
+			alert(err.code);
+		}
+		;
+
+		// start Image capture
+		navigator.capture.captureAudio(captureSuccess, captureError, {
+			destinationFilename : "file://sdcard/skruntime/audiotest.wav",
+			highRes : true
+		});
+
+		//navigator.capture.captureVideo(captureSuccess, captureError);
+	}
+</script>
+</head>
+<hr>
+Capture API Test
+<BR>
+<a href="file:///android_asset/www/index.html">back</a>
+<hr>
+<button onclick="CaptureImage();">CaptureImage</button>
+<br>
+<button onclick="CaptureVideo();">CaptureVideo</button>
+<br>
+<button onclick="CaptureAudio();">CaptureAudio</button>
+<br>
+<br>
+<img id="captureimg" witdh="200px" height="200px"></img>
+</body>
+</html>

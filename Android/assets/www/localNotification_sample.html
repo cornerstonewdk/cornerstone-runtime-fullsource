@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport"
+	context="width-divice-width, initial-scele-1.0, user-scalble=no">
+<script type="text/javascript" charset="utf-8" src="../sktjs/SRT-0.1.js"></script>
+<title>localNotification API</title>
+<script type="text/javascript">
+	function add() {
+		// define the success callback
+		function successCB() {
+			alert("The localNotification was added");
+		}
+
+		// define the error callback
+		function errorCB(response) {
+			alert("The following error: " + response.code + ", occurred");
+		}
+
+		var d = new Date();
+	    d = d.getTime() + 60000; //60 seconds from now
+	    //d = d.getTime();
+	    d = new Date(d);
+	    
+		navigator.localNotification.add(successCB, errorCB, {
+			date : d,
+			//date : "7/27/2012/14/19",
+			message : "Test Notification \r\n and subtitle",
+			ticker : "This is a sample ticker text",
+			repeatDaily : false,
+			id : 10
+		});
+	}
+
+	function add2() {
+		// define the success callback
+		function successCB() {
+			alert("The localNotification was added");
+		}
+
+		// define the error callback
+		function errorCB(response) {
+			alert("The following error: " + response.code + ", occurred");
+		}
+
+		var d = new Date();
+	    d = d.getTime() + 60000; //60 seconds from now
+	    //d = d.getTime();
+	    d = new Date(d);
+	    
+		navigator.localNotification.add(successCB, errorCB, {
+			date : d,
+			//date : "7/27/2012/14/19",
+			message : "2222222 \r\n33333",
+			ticker : "asdfasdfasdf",
+			repeatDaily : false,
+			id : 11
+		});
+	}
+	
+	function cancle() {
+		// define the success callback
+		function successCB() {
+			alert("The localNotification was deleted");
+		}
+
+		// define the error callback
+		function errorCB(response) {
+			alert("The following error: " + response.code + ", occurred");
+		}
+
+		navigator.localNotification.cancel(successCB, errorCB, 10);
+	}
+
+	function cancleAll() {
+		// define the success callback
+		function successCB() {
+			alert("The localNotification was deleted");
+		}
+
+		// define the error callback
+		function errorCB(response) {
+			alert("The following error: " + response.code + ", occurred");
+		}
+
+		navigator.localNotification.cancelAll(successCB, errorCB);
+	}
+</script>
+</head>
+<hr>
+localNotification API API Test
+<BR>
+<a href="file:///android_asset/www/index.html">back</a>
+<br>
+<button onclick="add();">add</button><br>
+<button onclick="add2();">add2</button><br>
+<button onclick="cancle();">cancle</button><br>
+<button onclick="cancleAll();">cancleAll</button><br>
+<br>
+<br>
+<img id="captureimg" witdh="200px" height="200px"></img>
+
+<h1>This is test text</h1>
+</body>
+</html>

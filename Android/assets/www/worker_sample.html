@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport"
+	context="width-divice-width, initial-scele-1.0, user-scalble=no">
+<script type="text/javascript" charset="utf-8" src="../sktjs/SRT-0.1.js"></script>
+<title>Vibrate</title>
+</head>
+<body>
+<hr> Worker API Test<BR>
+<a href="file:///android_asset/www/index.html" >back</a><br><hr>
+	<p>
+		<input id="worker_work" type="button" value="Work!!!"></input> 
+		<input id="worker_work_stop" type="button" value="Stop!!!"></input>
+		<button onclick="alerttest();">alerttest</button><br>
+	</p>
+	<p id="worker_say">Say</p>
+	<textarea rows="4" cols="60">test worker</textarea>
+</body>
+<script type="text/javascript">
+	var worker;
+
+	function makeWorker() {
+		worker = new Worker("cals.js");
+	};
+
+	document.getElementById("worker_work").onclick = function() {
+		makeWorker();
+		worker.postMessage(0);
+		
+		worker.onmessage = function(evt) {
+			document.getElementById("worker_say").innerHTML = evt.data;
+		};
+
+		document.getElementById("worker_work_stop").onclick = function() {
+			if (worker) {
+				worker.terminate();
+				alert("Worker. Stop!!! ");
+			};
+		};
+
+		worker.onerror = function(evt) {
+			document.getElementById("worker_say").innerHTML = "Error : "
+					+ evt.message + " (" + evt.filename + ":" + evt.lineno
+					+ ")";
+		};
+	};
+	
+	function alerttest(){
+		alert("test");
+	}
+</script>
+</html>

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport"
+	context="width-divice-width, initial-scele-1.0, user-scalble=no">
+<script type="text/javascript" charset="utf-8" src="../sktjs/SRT-0.1.js"></script>
+<title>Media API</title>
+<script type="text/javascript">
+var gMedia1 = null;
+var gMedia2 = null;
+
+	function createAudio() {
+		function createmediasc (media) {
+		    alert(media.src + " is created");
+		    gMedia1 = media;
+		}
+
+		function error (err) {
+		    // do something with resulting error
+		    alert(err.code);
+		    // ...
+		}
+
+		//navigator.mediamanager.createAudio(createmediasc,error,"file://mnt/sdcard/Music/effect3.mp3" );
+		navigator.mediamanager.createAudio(createmediasc,error,"file:///mnt/sdcard/Music/test3.mp3" );
+		//navigator.mediamanager.createAudio(createmediasc,error,"sdcard/Music/test3.mp3" );
+		
+		//navigator.mediamanager.createAudio(createmediasc,error,"file://mnt/sdcard/Sounds/음성녹음 012.3ga" );
+		
+		//navigator.mediamanager.createAudio(createmediasc,error,"file:///android_asset/example/aaa.mp3" );
+	}
+	
+	function play() {
+		gMedia1.play();		
+		//var mediaTimer = setInterval(function() {
+		//gMedia1.play();
+	    //}, 50);
+	}
+	
+	function pause() {
+		gMedia1.pause();
+	}
+	
+	function stop() {
+		gMedia1.stop();
+	}
+	
+	function createAudioAndPlay2() {
+		function createmediasc (media) {
+		    // do something with resulting media objects
+		    gMedia2 = media
+		    gMedia2.play();
+		}
+
+		function error (err) {
+		    // do something with resulting error
+		    alert(err.code);
+		    // ...
+		}
+
+		navigator.mediamanager.createAudio(createmediasc,error,"file://sdcard/Music/test2.mp3" );
+		//navigator.mediamanager.createAudio(createmediasc,error,"sdcard/Music/test2.mp3" );
+	}
+	
+	function seekTo() {
+		gMedia1.seekTo(10000);
+	}
+	
+	function setVolume() {
+		gMedia1.setVolume(10);
+	}
+	
+	function setVolume1() {
+		gMedia1.setVolume(90);
+	}
+	
+	function getDuration() {
+		var duration = gMedia1.getDuration();
+		alert(duration);
+	}
+	
+	function getCurrentPosition() {
+		var mediaTimer = setInterval(function() {
+	        // get media position
+	        gMedia1.getCurrentPosition(
+	            // success callback
+	            function(position) {
+	                if (position > -1) {
+	                    console.log((position) + " sec");
+	                }
+	            },
+	            // error callback
+	            function(e) {
+	                console.log("Error getting pos=" + e);
+	            }
+	        );
+	    }, 1000);
+	}
+	
+	function releaseMedia(){
+		// Release after 20 seconds
+	    setTimeout(function() {
+	    	gMedia1.release();
+	    	gMedia1 = null;
+	    }, 5000);    
+	}
+</script>
+</head>
+<hr>
+Media API Test
+<BR>
+<a href="file:///android_asset/www/index.html">back</a>
+<br>
+<button onclick="createAudio();">createAudio</button><br>
+<button onclick="play();">play</button><br>
+<button onclick="pause();">pause</button><br>
+<button onclick="stop();">stop</button><br>
+<button onclick="seekTo();">seekTo(10sec)</button><br>
+<button onclick="getDuration();">getDuration</button><br>
+<button onclick="setVolume();">setVolume(10%)</button><br>
+<button onclick="setVolume1();">setVolume(90%)</button><br>
+<button onclick="getCurrentPosition();">getCurrentPosition</button><br>
+<button onclick="releaseMedia();">releaseMedia after 5sec</button><br>
+<button onclick="createAudioAndPlay2();">createAudioAndPlay2</button><br>
+<br>
+<br>
+<img id="captureimg" witdh="200px" height="200px"></img>
+
+<h1>This is test text</h1>
+</body>
+</html>

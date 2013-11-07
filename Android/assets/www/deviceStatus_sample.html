@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport"
+	context="width-divice-width, initial-scele-1.0, user-scalble=no">
+<script type="text/javascript" charset="utf-8" src="../sktjs/SRT-0.1.js"></script>
+<title>DeviceStatus</title>
+<script type="text/javascript">
+
+function testSC(prop,value) {
+	   alert("The aspect::" + prop.aspect + "  property::" + prop.property + " is " + value);
+}
+function testEC() {
+	   alert("error");
+}
+
+//cellularNetwork
+function operatorName(){
+	if(navigator.devicestatus.isSupported('CellularNetwork','operatorName')){
+		navigator.devicestatus.getPropertyValue(testSC ,testEC ,{aspect:"CellularNetwork", property:"operatorName"});
+	}
+}
+
+function isInRoaming(){
+	if(navigator.devicestatus.isSupported('CellularNetwork','isInRoaming')){
+		navigator.devicestatus.getPropertyValue(testSC ,testEC ,{aspect:"CellularNetwork", property:"isInRoaming"});
+	}
+}
+
+function signalStrength(){
+	if(navigator.devicestatus.isSupported('CellularNetwork','signalStrength')){
+		navigator.devicestatus.getPropertyValue(testSC ,testEC ,{aspect:"CellularNetwork", property:"signalStrength"});
+	}
+}
+
+function mnc(){
+	if(navigator.devicestatus.isSupported('CellularNetwork','mnc')){
+		navigator.devicestatus.getPropertyValue(testSC ,testEC ,{aspect:"CellularNetwork", property:"mnc"});
+	}
+}
+
+function mcc(){
+	if(navigator.devicestatus.isSupported('CellularNetwork','mcc')){
+		navigator.devicestatus.getPropertyValue(testSC ,testEC ,{aspect:"CellularNetwork", property:"mcc"});
+	}
+}
+
+
+//device
+function imei(){
+	if(navigator.devicestatus.isSupported('Device','imei')){
+		navigator.devicestatus.getPropertyValue(testSC ,testEC ,{aspect:"Device", property:"imei"});
+	}
+}
+
+function model(){
+	if(navigator.devicestatus.isSupported('Device','model')){
+		navigator.devicestatus.getPropertyValue(testSC ,testEC ,{aspect:"Device", property:"model"});
+	}
+}
+
+function vendor(){
+	if(navigator.devicestatus.isSupported('Device','vendor')){
+		navigator.devicestatus.getPropertyValue(testSC ,testEC ,{aspect:"Device", property:"vendor"});
+	}
+}
+
+function imsi(){
+	if(navigator.devicestatus.isSupported('Device','imsi')){
+		navigator.devicestatus.getPropertyValue(testSC ,testEC ,{aspect:"Device", property:"imsi"});
+	}
+}
+
+function version(){
+	if(navigator.devicestatus.isSupported('Device','version')){
+		navigator.devicestatus.getPropertyValue(testSC ,testEC ,{aspect:"Device", property:"version"});
+	}
+}
+function deviceplatform(){
+	if(navigator.devicestatus.isSupported('Device','platform')){
+		navigator.devicestatus.getPropertyValue(testSC ,testEC ,{aspect:"Device", property:"platform"});
+	}
+}
+
+//os
+function oslanguage(){
+	if(navigator.devicestatus.isSupported('OperatingSystem','language')){
+		navigator.devicestatus.getPropertyValue(testSC ,testEC ,{aspect:"OperatingSystem", property:"language"});
+	}
+}
+
+function osversion(){
+	if(navigator.devicestatus.isSupported('OperatingSystem','version')){
+		navigator.devicestatus.getPropertyValue(testSC ,testEC ,{aspect:"OperatingSystem", property:"version"});
+	}
+}
+
+function osname(){
+	if(navigator.devicestatus.isSupported('OperatingSystem','name')){
+		navigator.devicestatus.getPropertyValue(testSC ,testEC ,{aspect:"OperatingSystem", property:"name"});
+	}
+}
+
+function osvendor(){
+	if(navigator.devicestatus.isSupported('OperatingSystem','vendor')){
+		navigator.devicestatus.getPropertyValue(testSC ,testEC ,{aspect:"OperatingSystem", property:"vendor"});
+	}
+}
+
+//runtime
+function rtversion(){
+	if(navigator.devicestatus.isSupported('Runtime','version')){
+		navigator.devicestatus.getPropertyValue(testSC ,testEC ,{aspect:"Runtime", property:"version"});
+	}
+}
+
+function rtname(){
+	if(navigator.devicestatus.isSupported('Runtime','name')){
+		navigator.devicestatus.getPropertyValue(testSC ,testEC ,{aspect:"Runtime", property:"name"});
+	}
+}
+
+function rtvendor(){
+	if(navigator.devicestatus.isSupported('Runtime','vendor')){
+		navigator.devicestatus.getPropertyValue(testSC ,testEC ,{aspect:"Runtime", property:"vendor"});
+	}
+}
+
+//wifi
+function wifissid(){
+	if(navigator.devicestatus.isSupported('WiFiNetwork','ssid')){
+		navigator.devicestatus.getPropertyValue(testSC ,testEC ,{aspect:"WiFiNetwork", property:"ssid"});
+	}
+	else
+		alert("test");
+}
+
+function wifisignalStrength(){
+	if(navigator.devicestatus.isSupported('WiFiNetwork','signalStrength')){
+		navigator.devicestatus.getPropertyValue(testSC ,testEC ,{aspect:"WiFiNetwork", property:"signalStrength"});
+	}
+}
+
+function wifinetworkStatus(){
+	if(navigator.devicestatus.isSupported('WiFiNetwork','networkStatus')){
+		navigator.devicestatus.getPropertyValue(testSC ,testEC ,{aspect:"WiFiNetwork", property:"networkStatus"});
+	}
+}
+
+</script>
+</head>
+<hr> DeviceStatus API Test<BR>
+<a href="file:///android_asset/www/index.html" >back</a><hr>
+CellularNetork<br>
+<button onclick="operatorName();">operatorName</button><br>
+<button onclick="isInRoaming();">isInRoaming</button><br>
+<button onclick="signalStrength();">signalStrength</button><br>
+<button onclick="mnc();">mnc</button><br>
+<button onclick="mcc();">mcc</button><br>
+<br><br>
+Device<br>
+<button onclick="imei();">imei</button><br>
+<button onclick="model();">model</button><br>
+<button onclick="vendor();">vendor</button><br>
+<button onclick="imsi();">imsi</button><br>
+<button onclick="version();">version</button><br>
+<button onclick="deviceplatform();">platform</button><br>
+<br><br>
+OS<br>
+<button onclick="oslanguage();">language</button><br>
+<button onclick="osversion();">version</button><br>
+<button onclick="osname();">name</button><br>
+<button onclick="osvendor();">vendor</button><br>
+<br><br>
+Runtime<br>
+<button onclick="rtversion();">version</button><br>
+<button onclick="rtname();">name</button><br>
+<button onclick="rtvendor();">vendor</button><br>
+<br><br>
+WIFINetwork<br>
+<button onclick="wifissid();">ssid</button><br>
+<button onclick="wifisignalStrength();">signalStrength</button><br>
+<button onclick="wifinetworkStatus();">networkStatus</button><br>
+<br><br>
+</body>
+</html>

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport"
+	context="width-divice-width, initial-scele-1.0, user-scalble=no">
+<script type="text/javascript" charset="utf-8" src="../sktjs/SRT-0.1.js"></script>
+<title>AppLauncher API</title>
+<script type="text/javascript">
+
+var apps = {};
+
+	function getInstalledApplications() {
+		 // Define the getInstalledApplications success callback.
+		 function successCallback(response) {			 
+			 for(var i = 0 ; i < response.length ; i ++)
+				 console.log(response[i] + " is installed");
+			 apps = response;
+			 
+			 alert(response.length + " app is installed");
+		 }
+		 
+		 // Define the error callback.
+		 function errorCallback(response) {
+		        alert( "The following error: " +  response.code + ", occurred");
+		 }
+		 
+		 // Get all installed applications.
+		 navigator.applauncher.getInstalledApplications(successCallback, errorCallback);
+	}
+	
+	function launchApplication(){
+		 // Define the launchApplication success callback.
+		 function launchedCallback() {
+		        alert( apps[0] + " launched successful");
+		 }
+
+		 function errorCallback(e){
+			 alert("error");
+		 }
+		// Response is an array of fully qualified application paths - let's launch the first application.
+		navigator.applauncher.launchApplication(launchedCallback,errorCallback, apps[0]);
+	}
+	
+	function launchApplication1(){
+		 // Define the launchApplication success callback.
+		 function launchedCallback() {
+		        alert( apps[50] + " launched successful");
+		 }
+
+		 function errorCallback(e){
+			 alert("error");
+		 }
+		// Response is an array of fully qualified application paths - let's launch the first application.
+		navigator.applauncher.launchApplication(launchedCallback,errorCallback, apps[50]);
+	}
+	
+	function launchApplication2(){
+		 // Define the launchApplication success callback.
+		 function launchedCallback() {
+		        alert( apps[5] + " launched successful");
+		 }
+
+		 function errorCallback(e){
+			 alert("error");
+		 }
+		// Response is an array of fully qualified application paths - let's launch the first application.
+		navigator.applauncher.launchApplication(launchedCallback,errorCallback, apps[5]);
+	}
+	
+	function launchApplication3(){
+		 // Define the launchApplication success callback.
+		 function launchedCallback() {
+		        alert( apps[20] + " launched successful");
+		 }
+
+		 function errorCallback(e){
+			 alert("error");
+		 }
+		// Response is an array of fully qualified application paths - let's launch the first application.
+		navigator.applauncher.launchApplication(launchedCallback,errorCallback, apps[20]);
+	}
+	
+	function launchApplicationarg(){
+		 // Define the launchApplication success callback.
+		 function launchedCallback() {
+		        //alert( "co.kr.infraware.uploadtest launched successful");
+		 }
+
+		 function errorCallback(e){
+			 alert("error");
+		 }
+		 
+		// Response is an array of fully qualified application paths - let's launch the first application.
+		/*
+		var apparg =  [
+		               {name: 'somestring' , 		value : 'text.txt' ,				type : 'string'} 
+					 , {name: 'someint' , 			value : 11 		,					type : 'number'}
+					 , {name: 'someboolean' , 		value : true 	,					type : 'boolean'}
+					 , {name: 'somenumberarray' ,   value : [1,2,5,6,5,] 	,			type : 'numberArray'}
+					 , {name: 'somestringarray' , 	value : ['a.png','b.png','c.jpg'], 	type : 'stringArray'}				 
+					 ];
+		*/
+		
+		//navigator.applauncher.launchApplication(launchedCallback,errorCallback, "co.kr.infraware.uploadtest",apparg);
+		
+		var apparg = [{name:'body' , value: 'test' , type:'string'}];
+		
+		var appaction = {action:'android.intent.action.SENDTO', 
+						 uri:'sms:01076666049' , 
+						 type:"text/plain" ,
+						 category:"android.intent.somecategory"}
+		
+		navigator.applauncher.launchApplication(launchedCallback,errorCallback, "com.android.mms", apparg, appaction);
+		//navigator.applauncher.launchApplication(launchedCallback,errorCallback, "com.android.mms");
+	}
+</script>
+</head>
+<hr>
+AppLauncher API Test
+<BR>
+<a href="file:///android_asset/www/index.html">back</a>
+<br>
+<button onclick="getInstalledApplications();">getInstalledApplications</button>
+<button onclick="launchApplication();">launchApplication</button>
+<button onclick="launchApplication1();">launchApplication1</button>
+<button onclick="launchApplication2();">launchApplication2</button>
+<button onclick="launchApplication3();">launchApplication3</button>
+<button onclick="launchApplicationarg();">launchApplicationarg</button>
+<br>
+</body>
+</html>

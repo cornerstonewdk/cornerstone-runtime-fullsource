@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport"
+	context="width-divice-width, initial-scele-1.0, user-scalble=no">
+<script type="text/javascript" charset="utf-8" src="../sktjs/SRT-0.1.js"></script>
+<title>ChildBrowser API</title>
+<script type="text/javascript">
+
+	function onLocationChange(location){
+		alert("location changed :: " + location);
+	}
+	function onClose(){
+		alert("closed");
+	}
+	function onError(data){
+		alert(data + " error!!");
+	}
+	function setCallBack(){
+		navigator.childBrowser.onLocationChange = onLocationChange;
+		navigator.childBrowser.onClose = onClose;
+		navigator.childBrowser.onError = onError;
+	}
+	function releaseCallback(){
+		navigator.childBrowser.onLocationChange = null;
+		navigator.childBrowser.onClose = null;
+		navigator.childBrowser.onError = null;
+	}
+	
+	function showChildBrowser() {
+		navigator.childBrowser.showWebPage("http://www.naver.com", { showLocationBar: true });
+	}
+	
+	function closeChildBrowser(){
+	 	navigator.childBrowser.close();
+	}
+	
+	/*
+	function openExternal(){
+		navigator.childBrowser.openExternal("http://www.google.com",false);
+	}
+	*/
+</script>
+</head>
+<hr>
+ChildBrowser API API Test
+<BR>
+<a href="file:///android_asset/www/index.html">back</a>
+<br>
+<button onclick="setCallBack();">setCallBack</button><br>
+<button onclick="releaseCallback();">releaseCallback</button><br>
+<button onclick="showChildBrowser();">showChildBrowser</button><br>
+<button onclick="closeChildBrowser();">closeChildBrowser</button><br>
+<!-- <button onclick="openExternal();">openExternal</button><br>-->
+<br>
+</body>
+</html>

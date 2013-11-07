@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport"
+	context="width-divice-width, initial-scele-1.0, user-scalble=no">
+<script type="text/javascript" charset="utf-8" src="../sktjs/SRT-0.1.js"></script>
+<script type="text/javascript" charset="utf-8" src="../sktjs/smsreceiverplugin.js"></script>
+<title>PageLoadingPlugin</title>
+<script type="text/javascript">
+
+function onSMSHandelr(obj){
+	alert("from = " + obj.from);
+	alert("form = " + obj.body);
+}
+function registerSMSHandler(){
+	window.plugins.SMSReceiver.onSMS(onSMSHandelr);
+}
+function unregisterSMSHandelr(){
+	window.plugins.SMSReceiver.stop();
+}
+</script>
+</head>
+<hr> PageLoadingPlugin API Test<BR>
+
+<a href="file:///android_asset/www/index.html" >back</a><hr>
+<button onclick="registerSMSHandler();">registerSMSHandler</button><br>
+<button onclick="unregisterSMSHandelr();">unregisterSMSHandelr</button><br>
+</body>
+</html>

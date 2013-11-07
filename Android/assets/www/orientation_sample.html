@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" context="width-divice-width, initial-scele-1.0, user-scalble=no">
+<script type="text/javascript" charset="utf-8" src="../sktjs/SRT-0.1.js"></script>
+<title>Orienation</title>
+<script type="text/javascript">
+ var context;
+ var heading;
+ var compassImg = new Image();
+ compassImg.src = "compass.png";
+ 
+ var heading=0; 
+ window.onload=function(){
+  var canvas = document.getElementById("myCanvas");
+  context = canvas.getContext("2d");
+  
+  window.addEventListener("deviceorientation", changeOri, true);
+  //window.ondeviceorientation = changeOri;
+  //setInterval(getCurrentOrientation,100);
+  setInterval(drawCanvas, 100);
+  
+ }
+ 
+ function getCurrentOrientation(){
+	 navigator.orientation.getCurrentOrientation(changeOri,function ec(){});
+ }
+ 
+ function drawCanvas(){
+  context.save();
+  context.translate(150,150);
+  context.rotate(-heading);
+  context.drawImage(compassImg,-150,-150,300,300);
+  context.restore();
+  
+ }
+ 
+ 
+ function changeOri(event){
+  heading = parseInt(event.alpha)*Math.PI/180;
+  var pitch = parseInt(event.beta)*Math.PI/180;;
+  var rolling = parseInt(event.gamma)*Math.PI/180;;
+  //console.log("헤딩:"+heading+"<br/>피치:"+pitch+"<br/>롤링:"+rolling);
+ }
+ 
+ function log(msg){
+  var console = document.getElementById("console");
+  console.innerHTML += msg + "<br/>";
+ }
+</script>
+</head>
+<body>
+<hr> Orientation API Test<BR>
+<a href="file:///android_asset/www/index.html" >back</a><hr>
+<div>
+ <canvas id="myCanvas" width="300" height="300"></canvas>
+</div>
+<!-- <div id="console" style="width: 500px; border:2px solid red; font-size:20px"></div> -->
+</body>
+</html>

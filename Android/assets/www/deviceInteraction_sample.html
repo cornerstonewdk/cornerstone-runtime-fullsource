@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport"
+	context="width-divice-width, initial-scele-1.0, user-scalble=no">
+<script type="text/javascript" charset="utf-8" src="../sktjs/SRT-0.1.js"></script>
+<title>DeviceInteraction API</title>
+<script type="text/javascript">
+	function startBeepTest() {
+		// makes the device beep/vibrate/backlight-on for 10 secs
+		navigator.deviceinteraction.startBeep(3); 
+	}
+	
+	function stopBeepTest() {
+		 // To be invoked when the user stops the notify manually
+		  navigator.deviceinteraction.stopBeep();
+	}
+	
+	function setCallRintoneTest() {
+		//call async function set ringtone
+	    // Sets the ringtone of the device to test.mp3
+	    navigator.deviceinteraction.setCallRingtone(function() {alert("ringtone is changed");}, 
+	                                             function(e) {alert(e.message);}, "file://sdcard/Music/test.mp3", "GangNam_style"); 
+
+	}
+	
+	function setWallPaperTest() {
+		//call async function set wallpaper
+	    // Sets the wallpaper of the device to a.jpg
+	    navigator.deviceinteraction.setWallpaper(function() {alert("wallpaper set");}, 
+	                                             function(e) {alert(e.message);}, "file://sdcard/images/a.jpg"); 
+	}
+	
+	function exitAppTest() {
+	    navigator.deviceinteraction.exitApp(); 
+	}
+	
+	function playRingtoneTest() {
+	    navigator.deviceinteraction.playRingtone(function(){alert("ringtone play");},function(e) {alert(e.message);}); 
+	}
+	
+	function stopRingtoneTest() {
+	    navigator.deviceinteraction.stopRingtone(); 
+	}
+	
+</script>
+</head>
+<hr>
+DeviceInteraction API Test
+<BR>
+<a href="file:///android_asset/www/index.html">back</a>
+<hr>
+<button onclick="startBeepTest();">startBeepTest</button>
+<br>
+<button onclick="stopBeepTest();">stopBeepTest</button>
+<br>
+<button onclick="setCallRintoneTest();">setCallRintoneTest</button>
+<br>
+<button onclick="setWallPaperTest();">setWallPaperTest</button>
+<br>
+<button onclick="exitAppTest()">exitAppTest</button>
+<br>
+<button onclick="playRingtoneTest();">playRingtoneTest</button>
+<br>
+<button onclick="stopRingtoneTest();">stopRingtoneTest</button>
+<br>
+<img id="captureimg" witdh="200px" height="200px"></img>
+</body>
+</html>

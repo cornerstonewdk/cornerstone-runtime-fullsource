@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport"
+	context="width-divice-width, initial-scele-1.0, user-scalble=no">
+<script type="text/javascript" charset="utf-8" src="../sktjs/SRT-0.1.js"></script>
+<script type="text/javascript" charset="utf-8" src="../sktjs/calllogplugin.js"></script>
+<title>CallLog Test</title>
+<script type="text/javascript">
+
+function calllogSC(obj){
+	if (obj.length > 0) {
+			alert(obj[0].number);
+			alert(obj[0].duration);
+		} else {
+			alert("empty call log");
+		}
+}
+function ec(e) {
+	alert(e);
+}
+function getCallLogs() {
+	window.plugins.CallLog.list(calllogSC, ec, "day");
+}
+</script>
+</head>
+<hr> CallLog Test<BR>
+
+<a href="file:///android_asset/www/index.html" >back</a><hr>
+<button onclick="getCallLogs();">getCallLogs</button><br>
+</body>
+</html>
