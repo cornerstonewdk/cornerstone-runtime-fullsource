@@ -1,0 +1,957 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXAggregateTarget section */
+		303258E7136B2D4F00982B63 /* UniversalFramework */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 303258EF136B2D8700982B63 /* Build configuration list for PBXAggregateTarget "UniversalFramework" */;
+			buildPhases = (
+				303258E6136B2D4F00982B63 /* ShellScript */,
+			);
+			dependencies = (
+			);
+			name = UniversalFramework;
+			productName = UniversalFramework;
+		};
+/* End PBXAggregateTarget section */
+
+/* Begin PBXBuildFile section */
+		09B55BA915E4D034004204BC /* EventKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09B55BA815E4D034004204BC /* EventKit.framework */; };
+		09B55BAB15E4D03C004204BC /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09B55BAA15E4D03C004204BC /* MessageUI.framework */; };
+		09B55BAC15E4D067004204BC /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68A32D7414103017006B237C /* AddressBook.framework */; };
+		09B55BAD15E4D067004204BC /* AddressBookUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 686357CC14100AAD00DF4CF2 /* AddressBookUI.framework */; };
+		09B55BAE15E4D079004204BC /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 686357CE14100ADA00DF4CF2 /* AudioToolbox.framework */; };
+		09B55BAF15E4D07F004204BC /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 686357CF14100ADB00DF4CF2 /* AVFoundation.framework */; };
+		09B55BB015E4D08B004204BC /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 686357D014100ADE00DF4CF2 /* CoreLocation.framework */; };
+		09B55BB215E4D097004204BC /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09B55BB115E4D097004204BC /* MediaPlayer.framework */; };
+		09B55BB415E4D09F004204BC /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09B55BB315E4D09F004204BC /* QuartzCore.framework */; };
+		09B55BB515E4D0A8004204BC /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 686357D414100AF200DF4CF2 /* SystemConfiguration.framework */; };
+		09B55BB615E4D0B1004204BC /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 686357D214100AE700DF4CF2 /* MobileCoreServices.framework */; };
+		09B55BB715E4D0BC004204BC /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 686357DC14100B1600DF4CF2 /* CoreMedia.framework */; };
+		09B593A01779360100E03C8A /* RTPush.h in Headers */ = {isa = PBXBuildFile; fileRef = 09B5939E1779360100E03C8A /* RTPush.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		09B593A11779360100E03C8A /* RTPush.m in Sources */ = {isa = PBXBuildFile; fileRef = 09B5939F1779360100E03C8A /* RTPush.m */; };
+		09B869E817CC2ADB006B720A /* RTPreference.h in Headers */ = {isa = PBXBuildFile; fileRef = 09B869E617CC2ADB006B720A /* RTPreference.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		09B869E917CC2ADB006B720A /* RTPreference.m in Sources */ = {isa = PBXBuildFile; fileRef = 09B869E717CC2ADB006B720A /* RTPreference.m */; };
+		09C1B07D15F58F00006B6DA1 /* AppDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 09C1B07915F58F00006B6DA1 /* AppDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		09C1B07E15F58F00006B6DA1 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 09C1B07A15F58F00006B6DA1 /* AppDelegate.m */; };
+		09C1B07F15F58F00006B6DA1 /* MainViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 09C1B07B15F58F00006B6DA1 /* MainViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		09C1B08015F58F00006B6DA1 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 09C1B07C15F58F00006B6DA1 /* MainViewController.m */; };
+		09C1B08315F58F4A006B6DA1 /* ChildBrowserViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 09C1B08115F58F4A006B6DA1 /* ChildBrowserViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		09C1B08415F58F4A006B6DA1 /* ChildBrowserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 09C1B08215F58F4A006B6DA1 /* ChildBrowserViewController.m */; };
+		09C5D5C9161E9BFC0017C7B3 /* RT.h in Headers */ = {isa = PBXBuildFile; fileRef = 09C5D588161E9BFC0017C7B3 /* RT.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		09C5D5CA161E9BFC0017C7B3 /* RTAccelerometer.h in Headers */ = {isa = PBXBuildFile; fileRef = 09C5D589161E9BFC0017C7B3 /* RTAccelerometer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		09C5D5CB161E9BFC0017C7B3 /* RTAccelerometer.m in Sources */ = {isa = PBXBuildFile; fileRef = 09C5D58A161E9BFC0017C7B3 /* RTAccelerometer.m */; };
+		09C5D5CC161E9BFC0017C7B3 /* RTAppLauncher.h in Headers */ = {isa = PBXBuildFile; fileRef = 09C5D58B161E9BFC0017C7B3 /* RTAppLauncher.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		09C5D5CD161E9BFC0017C7B3 /* RTAppLauncher.m in Sources */ = {isa = PBXBuildFile; fileRef = 09C5D58C161E9BFC0017C7B3 /* RTAppLauncher.m */; };
+		09C5D5CE161E9BFC0017C7B3 /* RTBattery.h in Headers */ = {isa = PBXBuildFile; fileRef = 09C5D58D161E9BFC0017C7B3 /* RTBattery.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		09C5D5CF161E9BFC0017C7B3 /* RTBattery.m in Sources */ = {isa = PBXBuildFile; fileRef = 09C5D58E161E9BFC0017C7B3 /* RTBattery.m */; };
+		09C5D5D0161E9BFC0017C7B3 /* RTCalendar.h in Headers */ = {isa = PBXBuildFile; fileRef = 09C5D58F161E9BFC0017C7B3 /* RTCalendar.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		09C5D5D1161E9BFC0017C7B3 /* RTCalendar.m in Sources */ = {isa = PBXBuildFile; fileRef = 09C5D590161E9BFC0017C7B3 /* RTCalendar.m */; };
+		09C5D5D2161E9BFC0017C7B3 /* RTCapture.h in Headers */ = {isa = PBXBuildFile; fileRef = 09C5D591161E9BFC0017C7B3 /* RTCapture.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		09C5D5D3161E9BFC0017C7B3 /* RTCapture.m in Sources */ = {isa = PBXBuildFile; fileRef = 09C5D592161E9BFC0017C7B3 /* RTCapture.m */; };
+		09C5D5D4161E9BFC0017C7B3 /* RTChildBrowserCommand.h in Headers */ = {isa = PBXBuildFile; fileRef = 09C5D593161E9BFC0017C7B3 /* RTChildBrowserCommand.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		09C5D5D5161E9BFC0017C7B3 /* RTChildBrowserCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = 09C5D594161E9BFC0017C7B3 /* RTChildBrowserCommand.m */; };
+		09C5D5D6161E9BFC0017C7B3 /* RTCommandDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 09C5D595161E9BFC0017C7B3 /* RTCommandDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		09C5D5D7161E9BFC0017C7B3 /* RTConnection.h in Headers */ = {isa = PBXBuildFile; fileRef = 09C5D596161E9BFC0017C7B3 /* RTConnection.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		09C5D5D8161E9BFC0017C7B3 /* RTConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 09C5D597161E9BFC0017C7B3 /* RTConnection.m */; };
+		09C5D5D9161E9BFC0017C7B3 /* RTContact.h in Headers */ = {isa = PBXBuildFile; fileRef = 09C5D598161E9BFC0017C7B3 /* RTContact.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		09C5D5DA161E9BFC0017C7B3 /* RTContact.m in Sources */ = {isa = PBXBuildFile; fileRef = 09C5D599161E9BFC0017C7B3 /* RTContact.m */; };
+		09C5D5DB161E9BFC0017C7B3 /* RTContacts.h in Headers */ = {isa = PBXBuildFile; fileRef = 09C5D59A161E9BFC0017C7B3 /* RTContacts.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		09C5D5DC161E9BFC0017C7B3 /* RTContacts.m in Sources */ = {isa = PBXBuildFile; fileRef = 09C5D59B161E9BFC0017C7B3 /* RTContacts.m */; };
+		09C5D5DD161E9BFC0017C7B3 /* RTDebug.h in Headers */ = {isa = PBXBuildFile; fileRef = 09C5D59C161E9BFC0017C7B3 /* RTDebug.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		09C5D5DE161E9BFC0017C7B3 /* RTDebugConsole.h in Headers */ = {isa = PBXBuildFile; fileRef = 09C5D59D161E9BFC0017C7B3 /* RTDebugConsole.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		09C5D5DF161E9BFC0017C7B3 /* RTDebugConsole.m in Sources */ = {isa = PBXBuildFile; fileRef = 09C5D59E161E9BFC0017C7B3 /* RTDebugConsole.m */; };
+		09C5D5E0161E9BFC0017C7B3 /* RTDeviceStatus.h in Headers */ = {isa = PBXBuildFile; fileRef = 09C5D59F161E9BFC0017C7B3 /* RTDeviceStatus.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		09C5D5E1161E9BFC0017C7B3 /* RTDeviceStatus.m in Sources */ = {isa = PBXBuildFile; fileRef = 09C5D5A0161E9BFC0017C7B3 /* RTDeviceStatus.m */; };
+		09C5D5E2161E9BFC0017C7B3 /* RTFile.h in Headers */ = {isa = PBXBuildFile; fileRef = 09C5D5A1161E9BFC0017C7B3 /* RTFile.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		09C5D5E3161E9BFC0017C7B3 /* RTFile.m in Sources */ = {isa = PBXBuildFile; fileRef = 09C5D5A2161E9BFC0017C7B3 /* RTFile.m */; };
+		09C5D5E4161E9BFC0017C7B3 /* RTFileTransfer.h in Headers */ = {isa = PBXBuildFile; fileRef = 09C5D5A3161E9BFC0017C7B3 /* RTFileTransfer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		09C5D5E5161E9BFC0017C7B3 /* RTFileTransfer.m in Sources */ = {isa = PBXBuildFile; fileRef = 09C5D5A4161E9BFC0017C7B3 /* RTFileTransfer.m */; };
+		09C5D5E6161E9BFC0017C7B3 /* RTHumiditySensor.h in Headers */ = {isa = PBXBuildFile; fileRef = 09C5D5A5161E9BFC0017C7B3 /* RTHumiditySensor.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		09C5D5E7161E9BFC0017C7B3 /* RTHumiditySensor.m in Sources */ = {isa = PBXBuildFile; fileRef = 09C5D5A6161E9BFC0017C7B3 /* RTHumiditySensor.m */; };
+		09C5D5E8161E9BFC0017C7B3 /* RTInvokedUrlCommand.h in Headers */ = {isa = PBXBuildFile; fileRef = 09C5D5A7161E9BFC0017C7B3 /* RTInvokedUrlCommand.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		09C5D5E9161E9BFC0017C7B3 /* RTInvokedUrlCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = 09C5D5A8161E9BFC0017C7B3 /* RTInvokedUrlCommand.m */; };
+		09C5D5EA161E9BFC0017C7B3 /* RTLightSensor.h in Headers */ = {isa = PBXBuildFile; fileRef = 09C5D5A9161E9BFC0017C7B3 /* RTLightSensor.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		09C5D5EB161E9BFC0017C7B3 /* RTLightSensor.m in Sources */ = {isa = PBXBuildFile; fileRef = 09C5D5AA161E9BFC0017C7B3 /* RTLightSensor.m */; };
+		09C5D5EC161E9BFC0017C7B3 /* RTLocalNotification.h in Headers */ = {isa = PBXBuildFile; fileRef = 09C5D5AB161E9BFC0017C7B3 /* RTLocalNotification.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		09C5D5ED161E9BFC0017C7B3 /* RTLocalNotification.m in Sources */ = {isa = PBXBuildFile; fileRef = 09C5D5AC161E9BFC0017C7B3 /* RTLocalNotification.m */; };
+		09C5D5EE161E9BFC0017C7B3 /* RTLogger.h in Headers */ = {isa = PBXBuildFile; fileRef = 09C5D5AD161E9BFC0017C7B3 /* RTLogger.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		09C5D5EF161E9BFC0017C7B3 /* RTLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 09C5D5AE161E9BFC0017C7B3 /* RTLogger.m */; };
+		09C5D5F0161E9BFC0017C7B3 /* RTMessaging.h in Headers */ = {isa = PBXBuildFile; fileRef = 09C5D5AF161E9BFC0017C7B3 /* RTMessaging.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		09C5D5F1161E9BFC0017C7B3 /* RTMessaging.m in Sources */ = {isa = PBXBuildFile; fileRef = 09C5D5B0161E9BFC0017C7B3 /* RTMessaging.m */; };
+		09C5D5F2161E9BFC0017C7B3 /* RTOrientation.h in Headers */ = {isa = PBXBuildFile; fileRef = 09C5D5B1161E9BFC0017C7B3 /* RTOrientation.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		09C5D5F3161E9BFC0017C7B3 /* RTOrientation.m in Sources */ = {isa = PBXBuildFile; fileRef = 09C5D5B2161E9BFC0017C7B3 /* RTOrientation.m */; };
+		09C5D5F4161E9BFC0017C7B3 /* RTPlugin.h in Headers */ = {isa = PBXBuildFile; fileRef = 09C5D5B3161E9BFC0017C7B3 /* RTPlugin.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		09C5D5F5161E9BFC0017C7B3 /* RTPlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = 09C5D5B4161E9BFC0017C7B3 /* RTPlugin.m */; };
+		09C5D5F6161E9BFC0017C7B3 /* RTPluginResult.h in Headers */ = {isa = PBXBuildFile; fileRef = 09C5D5B5161E9BFC0017C7B3 /* RTPluginResult.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		09C5D5F7161E9BFC0017C7B3 /* RTPluginResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 09C5D5B6161E9BFC0017C7B3 /* RTPluginResult.m */; };
+		09C5D5F8161E9BFC0017C7B3 /* RTPressureSensor.h in Headers */ = {isa = PBXBuildFile; fileRef = 09C5D5B7161E9BFC0017C7B3 /* RTPressureSensor.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		09C5D5F9161E9BFC0017C7B3 /* RTPressureSensor.m in Sources */ = {isa = PBXBuildFile; fileRef = 09C5D5B8161E9BFC0017C7B3 /* RTPressureSensor.m */; };
+		09C5D5FA161E9BFC0017C7B3 /* RTProximitySensor.h in Headers */ = {isa = PBXBuildFile; fileRef = 09C5D5B9161E9BFC0017C7B3 /* RTProximitySensor.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		09C5D5FB161E9BFC0017C7B3 /* RTProximitySensor.m in Sources */ = {isa = PBXBuildFile; fileRef = 09C5D5BA161E9BFC0017C7B3 /* RTProximitySensor.m */; };
+		09C5D5FC161E9BFC0017C7B3 /* RTReachability.h in Headers */ = {isa = PBXBuildFile; fileRef = 09C5D5BB161E9BFC0017C7B3 /* RTReachability.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		09C5D5FD161E9BFC0017C7B3 /* RTReachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 09C5D5BC161E9BFC0017C7B3 /* RTReachability.m */; };
+		09C5D5FE161E9BFC0017C7B3 /* RTScreenShot.h in Headers */ = {isa = PBXBuildFile; fileRef = 09C5D5BD161E9BFC0017C7B3 /* RTScreenShot.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		09C5D5FF161E9BFC0017C7B3 /* RTScreenShot.m in Sources */ = {isa = PBXBuildFile; fileRef = 09C5D5BE161E9BFC0017C7B3 /* RTScreenShot.m */; };
+		09C5D600161E9BFC0017C7B3 /* RTSound.h in Headers */ = {isa = PBXBuildFile; fileRef = 09C5D5BF161E9BFC0017C7B3 /* RTSound.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		09C5D601161E9BFC0017C7B3 /* RTSound.m in Sources */ = {isa = PBXBuildFile; fileRef = 09C5D5C0161E9BFC0017C7B3 /* RTSound.m */; };
+		09C5D602161E9BFC0017C7B3 /* RTSplashScreen.h in Headers */ = {isa = PBXBuildFile; fileRef = 09C5D5C1161E9BFC0017C7B3 /* RTSplashScreen.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		09C5D603161E9BFC0017C7B3 /* RTSplashScreen.m in Sources */ = {isa = PBXBuildFile; fileRef = 09C5D5C2161E9BFC0017C7B3 /* RTSplashScreen.m */; };
+		09C5D604161E9BFC0017C7B3 /* RTTemperatureSensor.h in Headers */ = {isa = PBXBuildFile; fileRef = 09C5D5C3161E9BFC0017C7B3 /* RTTemperatureSensor.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		09C5D605161E9BFC0017C7B3 /* RTTemperatureSensor.m in Sources */ = {isa = PBXBuildFile; fileRef = 09C5D5C4161E9BFC0017C7B3 /* RTTemperatureSensor.m */; };
+		09C5D606161E9BFC0017C7B3 /* RTURLProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = 09C5D5C5161E9BFC0017C7B3 /* RTURLProtocol.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		09C5D607161E9BFC0017C7B3 /* RTURLProtocol.m in Sources */ = {isa = PBXBuildFile; fileRef = 09C5D5C6161E9BFC0017C7B3 /* RTURLProtocol.m */; };
+		09C5D608161E9BFC0017C7B3 /* RTVibrate.h in Headers */ = {isa = PBXBuildFile; fileRef = 09C5D5C7161E9BFC0017C7B3 /* RTVibrate.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		09C5D609161E9BFC0017C7B3 /* RTVibrate.m in Sources */ = {isa = PBXBuildFile; fileRef = 09C5D5C8161E9BFC0017C7B3 /* RTVibrate.m */; };
+		09CF74E2175C5C0E00FE79B3 /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09CF74E1175C5C0E00FE79B3 /* GameKit.framework */; };
+		09D38DE715E4C08400527B00 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09D38DE615E4C08400527B00 /* CoreTelephony.framework */; };
+		09F3FB5C17C76C1500DC8CCB /* crypt.h in Headers */ = {isa = PBXBuildFile; fileRef = 09F3FB4F17C76C1500DC8CCB /* crypt.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		09F3FB5D17C76C1500DC8CCB /* ioapi.c in Sources */ = {isa = PBXBuildFile; fileRef = 09F3FB5017C76C1500DC8CCB /* ioapi.c */; };
+		09F3FB5E17C76C1500DC8CCB /* ioapi.h in Headers */ = {isa = PBXBuildFile; fileRef = 09F3FB5117C76C1500DC8CCB /* ioapi.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		09F3FB5F17C76C1500DC8CCB /* mztools.c in Sources */ = {isa = PBXBuildFile; fileRef = 09F3FB5217C76C1500DC8CCB /* mztools.c */; };
+		09F3FB6017C76C1500DC8CCB /* mztools.h in Headers */ = {isa = PBXBuildFile; fileRef = 09F3FB5317C76C1500DC8CCB /* mztools.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		09F3FB6117C76C1500DC8CCB /* SSZipArchive.h in Headers */ = {isa = PBXBuildFile; fileRef = 09F3FB5417C76C1500DC8CCB /* SSZipArchive.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		09F3FB6217C76C1500DC8CCB /* SSZipArchive.m in Sources */ = {isa = PBXBuildFile; fileRef = 09F3FB5517C76C1500DC8CCB /* SSZipArchive.m */; };
+		09F3FB6317C76C1500DC8CCB /* unzip.c in Sources */ = {isa = PBXBuildFile; fileRef = 09F3FB5617C76C1500DC8CCB /* unzip.c */; };
+		09F3FB6417C76C1500DC8CCB /* unzip.h in Headers */ = {isa = PBXBuildFile; fileRef = 09F3FB5717C76C1500DC8CCB /* unzip.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		09F3FB6517C76C1500DC8CCB /* zip.c in Sources */ = {isa = PBXBuildFile; fileRef = 09F3FB5817C76C1500DC8CCB /* zip.c */; };
+		09F3FB6617C76C1500DC8CCB /* zip.h in Headers */ = {isa = PBXBuildFile; fileRef = 09F3FB5917C76C1500DC8CCB /* zip.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		09F3FB6717C76C1500DC8CCB /* ZipArchive.h in Headers */ = {isa = PBXBuildFile; fileRef = 09F3FB5A17C76C1500DC8CCB /* ZipArchive.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		09F3FB6817C76C1500DC8CCB /* ZipArchive.mm in Sources */ = {isa = PBXBuildFile; fileRef = 09F3FB5B17C76C1500DC8CCB /* ZipArchive.mm */; };
+		09FBAF6E1754422B001CF0EC /* RTBluetooth.h in Headers */ = {isa = PBXBuildFile; fileRef = 09FBAF6C1754422B001CF0EC /* RTBluetooth.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		09FBAF6F1754422B001CF0EC /* RTBluetooth.m in Sources */ = {isa = PBXBuildFile; fileRef = 09FBAF6D1754422B001CF0EC /* RTBluetooth.m */; };
+		09FBB0F417548255001CF0EC /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09FBB0F317548255001CF0EC /* CoreBluetooth.framework */; };
+		30325990136B325100982B63 /* CDVCamera.m in Sources */ = {isa = PBXBuildFile; fileRef = 8887FD271090FBE7009987E8 /* CDVCamera.m */; };
+		30325991136B325100982B63 /* NSDictionary+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 8887FD291090FBE7009987E8 /* NSDictionary+Extensions.m */; };
+		3032599E136B325100982B63 /* CDVLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 8887FD471090FBE7009987E8 /* CDVLocation.m */; };
+		303259A1136B325100982B63 /* CDVNotification.m in Sources */ = {isa = PBXBuildFile; fileRef = 8887FD4F1090FBE7009987E8 /* CDVNotification.m */; };
+		303259A2136B325100982B63 /* NSData+Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = 8887FD511090FBE7009987E8 /* NSData+Base64.m */; };
+		303259AD136B326300982B63 /* CDVCamera.h in Headers */ = {isa = PBXBuildFile; fileRef = 8887FD261090FBE7009987E8 /* CDVCamera.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		303259AE136B326300982B63 /* NSDictionary+Extensions.h in Headers */ = {isa = PBXBuildFile; fileRef = 8887FD281090FBE7009987E8 /* NSDictionary+Extensions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		303259BC136B326300982B63 /* CDVLocation.h in Headers */ = {isa = PBXBuildFile; fileRef = 8887FD461090FBE7009987E8 /* CDVLocation.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		303259BF136B326300982B63 /* CDVNotification.h in Headers */ = {isa = PBXBuildFile; fileRef = 8887FD4E1090FBE7009987E8 /* CDVNotification.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		303259C0136B326300982B63 /* NSData+Base64.h in Headers */ = {isa = PBXBuildFile; fileRef = 8887FD501090FBE7009987E8 /* NSData+Base64.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		30325A0C136B343700982B63 /* VERSION in Resources */ = {isa = PBXBuildFile; fileRef = 30325A0B136B343700982B63 /* VERSION */; };
+		3034979D1513D56A0090E688 /* CDVLocalStorage.h in Headers */ = {isa = PBXBuildFile; fileRef = 3034979A1513D56A0090E688 /* CDVLocalStorage.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3034979F1513D56A0090E688 /* CDVLocalStorage.m in Sources */ = {isa = PBXBuildFile; fileRef = 3034979B1513D56A0090E688 /* CDVLocalStorage.m */; };
+		30392E5014F502C200B9E0B8 /* CDVAvailability.h in Headers */ = {isa = PBXBuildFile; fileRef = 30392E4D14F4FCAB00B9E0B8 /* CDVAvailability.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3062D121151D0EDB000D9128 /* UIDevice+Extensions.h in Headers */ = {isa = PBXBuildFile; fileRef = 3062D11E151D0EDB000D9128 /* UIDevice+Extensions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3062D123151D0EDB000D9128 /* UIDevice+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3062D11F151D0EDB000D9128 /* UIDevice+Extensions.m */; };
+		30956FFC138F317200FC3563 /* CDVMotion.h in Headers */ = {isa = PBXBuildFile; fileRef = 30956FD0138F1F5600FC3563 /* CDVMotion.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		30956FFD138F317200FC3563 /* CDVMotion.m in Sources */ = {isa = PBXBuildFile; fileRef = 30956FD1138F1F5600FC3563 /* CDVMotion.m */; };
+		30A90B9214588697006178D3 /* JSONKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 30A90B8F14588697006178D3 /* JSONKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		30A90B9414588697006178D3 /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 30A90B9014588697006178D3 /* JSONKit.m */; };
+		30C684811406CB38004C1A8E /* CDVWhitelist.h in Headers */ = {isa = PBXBuildFile; fileRef = 30C6847E1406CB38004C1A8E /* CDVWhitelist.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		30C684831406CB38004C1A8E /* CDVWhitelist.m in Sources */ = {isa = PBXBuildFile; fileRef = 30C6847F1406CB38004C1A8E /* CDVWhitelist.m */; };
+		30E563D113E217EC00C949AA /* NSMutableArray+QueueAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 30E563CD13E217EC00C949AA /* NSMutableArray+QueueAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		30E563D213E217EC00C949AA /* NSMutableArray+QueueAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 30E563CE13E217EC00C949AA /* NSMutableArray+QueueAdditions.m */; };
+		8852C43B14B65FD800F0E735 /* RTViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 8852C43614B65FD800F0E735 /* RTViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		8852C43D14B65FD800F0E735 /* RTViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8852C43714B65FD800F0E735 /* RTViewController.m */; };
+		8852C44014B65FD800F0E735 /* RTWebView.h in Headers */ = {isa = PBXBuildFile; fileRef = 8852C43814B65FD800F0E735 /* RTWebView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		8852C44214B65FD800F0E735 /* RTWebView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8852C43914B65FD800F0E735 /* RTWebView.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		09C5002915E5F111005B5AC1 /* Copy Files */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 15;
+			files = (
+			);
+			name = "Copy Files";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		09B55BA815E4D034004204BC /* EventKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKit.framework; path = System/Library/Frameworks/EventKit.framework; sourceTree = SDKROOT; };
+		09B55BAA15E4D03C004204BC /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		09B55BB115E4D097004204BC /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
+		09B55BB315E4D09F004204BC /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		09B5939E1779360100E03C8A /* RTPush.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RTPush.h; path = Classes/RTPush.h; sourceTree = "<group>"; };
+		09B5939F1779360100E03C8A /* RTPush.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RTPush.m; path = Classes/RTPush.m; sourceTree = "<group>"; };
+		09B869E617CC2ADB006B720A /* RTPreference.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RTPreference.h; path = Classes/RTPreference.h; sourceTree = "<group>"; };
+		09B869E717CC2ADB006B720A /* RTPreference.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RTPreference.m; path = Classes/RTPreference.m; sourceTree = "<group>"; };
+		09C1B07915F58F00006B6DA1 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = Classes/AppDelegate.h; sourceTree = "<group>"; };
+		09C1B07A15F58F00006B6DA1 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = Classes/AppDelegate.m; sourceTree = "<group>"; };
+		09C1B07B15F58F00006B6DA1 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MainViewController.h; path = Classes/MainViewController.h; sourceTree = "<group>"; };
+		09C1B07C15F58F00006B6DA1 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MainViewController.m; path = Classes/MainViewController.m; sourceTree = "<group>"; };
+		09C1B08115F58F4A006B6DA1 /* ChildBrowserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ChildBrowserViewController.h; path = Classes/ChildBrowserViewController.h; sourceTree = "<group>"; };
+		09C1B08215F58F4A006B6DA1 /* ChildBrowserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ChildBrowserViewController.m; path = Classes/ChildBrowserViewController.m; sourceTree = "<group>"; };
+		09C5D588161E9BFC0017C7B3 /* RT.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RT.h; path = Classes/RT.h; sourceTree = "<group>"; };
+		09C5D589161E9BFC0017C7B3 /* RTAccelerometer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RTAccelerometer.h; path = Classes/RTAccelerometer.h; sourceTree = "<group>"; };
+		09C5D58A161E9BFC0017C7B3 /* RTAccelerometer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RTAccelerometer.m; path = Classes/RTAccelerometer.m; sourceTree = "<group>"; };
+		09C5D58B161E9BFC0017C7B3 /* RTAppLauncher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RTAppLauncher.h; path = Classes/RTAppLauncher.h; sourceTree = "<group>"; };
+		09C5D58C161E9BFC0017C7B3 /* RTAppLauncher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RTAppLauncher.m; path = Classes/RTAppLauncher.m; sourceTree = "<group>"; };
+		09C5D58D161E9BFC0017C7B3 /* RTBattery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RTBattery.h; path = Classes/RTBattery.h; sourceTree = "<group>"; };
+		09C5D58E161E9BFC0017C7B3 /* RTBattery.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RTBattery.m; path = Classes/RTBattery.m; sourceTree = "<group>"; };
+		09C5D58F161E9BFC0017C7B3 /* RTCalendar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RTCalendar.h; path = Classes/RTCalendar.h; sourceTree = "<group>"; };
+		09C5D590161E9BFC0017C7B3 /* RTCalendar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RTCalendar.m; path = Classes/RTCalendar.m; sourceTree = "<group>"; };
+		09C5D591161E9BFC0017C7B3 /* RTCapture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RTCapture.h; path = Classes/RTCapture.h; sourceTree = "<group>"; };
+		09C5D592161E9BFC0017C7B3 /* RTCapture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RTCapture.m; path = Classes/RTCapture.m; sourceTree = "<group>"; };
+		09C5D593161E9BFC0017C7B3 /* RTChildBrowserCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RTChildBrowserCommand.h; path = Classes/RTChildBrowserCommand.h; sourceTree = "<group>"; };
+		09C5D594161E9BFC0017C7B3 /* RTChildBrowserCommand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RTChildBrowserCommand.m; path = Classes/RTChildBrowserCommand.m; sourceTree = "<group>"; };
+		09C5D595161E9BFC0017C7B3 /* RTCommandDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RTCommandDelegate.h; path = Classes/RTCommandDelegate.h; sourceTree = "<group>"; };
+		09C5D596161E9BFC0017C7B3 /* RTConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RTConnection.h; path = Classes/RTConnection.h; sourceTree = "<group>"; };
+		09C5D597161E9BFC0017C7B3 /* RTConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RTConnection.m; path = Classes/RTConnection.m; sourceTree = "<group>"; };
+		09C5D598161E9BFC0017C7B3 /* RTContact.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RTContact.h; path = Classes/RTContact.h; sourceTree = "<group>"; };
+		09C5D599161E9BFC0017C7B3 /* RTContact.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RTContact.m; path = Classes/RTContact.m; sourceTree = "<group>"; };
+		09C5D59A161E9BFC0017C7B3 /* RTContacts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RTContacts.h; path = Classes/RTContacts.h; sourceTree = "<group>"; };
+		09C5D59B161E9BFC0017C7B3 /* RTContacts.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RTContacts.m; path = Classes/RTContacts.m; sourceTree = "<group>"; };
+		09C5D59C161E9BFC0017C7B3 /* RTDebug.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RTDebug.h; path = Classes/RTDebug.h; sourceTree = "<group>"; };
+		09C5D59D161E9BFC0017C7B3 /* RTDebugConsole.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RTDebugConsole.h; path = Classes/RTDebugConsole.h; sourceTree = "<group>"; };
+		09C5D59E161E9BFC0017C7B3 /* RTDebugConsole.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RTDebugConsole.m; path = Classes/RTDebugConsole.m; sourceTree = "<group>"; };
+		09C5D59F161E9BFC0017C7B3 /* RTDeviceStatus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RTDeviceStatus.h; path = Classes/RTDeviceStatus.h; sourceTree = "<group>"; };
+		09C5D5A0161E9BFC0017C7B3 /* RTDeviceStatus.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RTDeviceStatus.m; path = Classes/RTDeviceStatus.m; sourceTree = "<group>"; };
+		09C5D5A1161E9BFC0017C7B3 /* RTFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RTFile.h; path = Classes/RTFile.h; sourceTree = "<group>"; };
+		09C5D5A2161E9BFC0017C7B3 /* RTFile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RTFile.m; path = Classes/RTFile.m; sourceTree = "<group>"; };
+		09C5D5A3161E9BFC0017C7B3 /* RTFileTransfer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RTFileTransfer.h; path = Classes/RTFileTransfer.h; sourceTree = "<group>"; };
+		09C5D5A4161E9BFC0017C7B3 /* RTFileTransfer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RTFileTransfer.m; path = Classes/RTFileTransfer.m; sourceTree = "<group>"; };
+		09C5D5A5161E9BFC0017C7B3 /* RTHumiditySensor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RTHumiditySensor.h; path = Classes/RTHumiditySensor.h; sourceTree = "<group>"; };
+		09C5D5A6161E9BFC0017C7B3 /* RTHumiditySensor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RTHumiditySensor.m; path = Classes/RTHumiditySensor.m; sourceTree = "<group>"; };
+		09C5D5A7161E9BFC0017C7B3 /* RTInvokedUrlCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RTInvokedUrlCommand.h; path = Classes/RTInvokedUrlCommand.h; sourceTree = "<group>"; };
+		09C5D5A8161E9BFC0017C7B3 /* RTInvokedUrlCommand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RTInvokedUrlCommand.m; path = Classes/RTInvokedUrlCommand.m; sourceTree = "<group>"; };
+		09C5D5A9161E9BFC0017C7B3 /* RTLightSensor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RTLightSensor.h; path = Classes/RTLightSensor.h; sourceTree = "<group>"; };
+		09C5D5AA161E9BFC0017C7B3 /* RTLightSensor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RTLightSensor.m; path = Classes/RTLightSensor.m; sourceTree = "<group>"; };
+		09C5D5AB161E9BFC0017C7B3 /* RTLocalNotification.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RTLocalNotification.h; path = Classes/RTLocalNotification.h; sourceTree = "<group>"; };
+		09C5D5AC161E9BFC0017C7B3 /* RTLocalNotification.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RTLocalNotification.m; path = Classes/RTLocalNotification.m; sourceTree = "<group>"; };
+		09C5D5AD161E9BFC0017C7B3 /* RTLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RTLogger.h; path = Classes/RTLogger.h; sourceTree = "<group>"; };
+		09C5D5AE161E9BFC0017C7B3 /* RTLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RTLogger.m; path = Classes/RTLogger.m; sourceTree = "<group>"; };
+		09C5D5AF161E9BFC0017C7B3 /* RTMessaging.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RTMessaging.h; path = Classes/RTMessaging.h; sourceTree = "<group>"; };
+		09C5D5B0161E9BFC0017C7B3 /* RTMessaging.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RTMessaging.m; path = Classes/RTMessaging.m; sourceTree = "<group>"; };
+		09C5D5B1161E9BFC0017C7B3 /* RTOrientation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RTOrientation.h; path = Classes/RTOrientation.h; sourceTree = "<group>"; };
+		09C5D5B2161E9BFC0017C7B3 /* RTOrientation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RTOrientation.m; path = Classes/RTOrientation.m; sourceTree = "<group>"; };
+		09C5D5B3161E9BFC0017C7B3 /* RTPlugin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RTPlugin.h; path = Classes/RTPlugin.h; sourceTree = "<group>"; };
+		09C5D5B4161E9BFC0017C7B3 /* RTPlugin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RTPlugin.m; path = Classes/RTPlugin.m; sourceTree = "<group>"; };
+		09C5D5B5161E9BFC0017C7B3 /* RTPluginResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RTPluginResult.h; path = Classes/RTPluginResult.h; sourceTree = "<group>"; };
+		09C5D5B6161E9BFC0017C7B3 /* RTPluginResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RTPluginResult.m; path = Classes/RTPluginResult.m; sourceTree = "<group>"; };
+		09C5D5B7161E9BFC0017C7B3 /* RTPressureSensor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RTPressureSensor.h; path = Classes/RTPressureSensor.h; sourceTree = "<group>"; };
+		09C5D5B8161E9BFC0017C7B3 /* RTPressureSensor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RTPressureSensor.m; path = Classes/RTPressureSensor.m; sourceTree = "<group>"; };
+		09C5D5B9161E9BFC0017C7B3 /* RTProximitySensor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RTProximitySensor.h; path = Classes/RTProximitySensor.h; sourceTree = "<group>"; };
+		09C5D5BA161E9BFC0017C7B3 /* RTProximitySensor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RTProximitySensor.m; path = Classes/RTProximitySensor.m; sourceTree = "<group>"; };
+		09C5D5BB161E9BFC0017C7B3 /* RTReachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RTReachability.h; path = Classes/RTReachability.h; sourceTree = "<group>"; };
+		09C5D5BC161E9BFC0017C7B3 /* RTReachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RTReachability.m; path = Classes/RTReachability.m; sourceTree = "<group>"; };
+		09C5D5BD161E9BFC0017C7B3 /* RTScreenShot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RTScreenShot.h; path = Classes/RTScreenShot.h; sourceTree = "<group>"; };
+		09C5D5BE161E9BFC0017C7B3 /* RTScreenShot.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RTScreenShot.m; path = Classes/RTScreenShot.m; sourceTree = "<group>"; };
+		09C5D5BF161E9BFC0017C7B3 /* RTSound.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RTSound.h; path = Classes/RTSound.h; sourceTree = "<group>"; };
+		09C5D5C0161E9BFC0017C7B3 /* RTSound.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RTSound.m; path = Classes/RTSound.m; sourceTree = "<group>"; };
+		09C5D5C1161E9BFC0017C7B3 /* RTSplashScreen.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RTSplashScreen.h; path = Classes/RTSplashScreen.h; sourceTree = "<group>"; };
+		09C5D5C2161E9BFC0017C7B3 /* RTSplashScreen.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RTSplashScreen.m; path = Classes/RTSplashScreen.m; sourceTree = "<group>"; };
+		09C5D5C3161E9BFC0017C7B3 /* RTTemperatureSensor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RTTemperatureSensor.h; path = Classes/RTTemperatureSensor.h; sourceTree = "<group>"; };
+		09C5D5C4161E9BFC0017C7B3 /* RTTemperatureSensor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RTTemperatureSensor.m; path = Classes/RTTemperatureSensor.m; sourceTree = "<group>"; };
+		09C5D5C5161E9BFC0017C7B3 /* RTURLProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RTURLProtocol.h; path = Classes/RTURLProtocol.h; sourceTree = "<group>"; };
+		09C5D5C6161E9BFC0017C7B3 /* RTURLProtocol.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RTURLProtocol.m; path = Classes/RTURLProtocol.m; sourceTree = "<group>"; };
+		09C5D5C7161E9BFC0017C7B3 /* RTVibrate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RTVibrate.h; path = Classes/RTVibrate.h; sourceTree = "<group>"; };
+		09C5D5C8161E9BFC0017C7B3 /* RTVibrate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RTVibrate.m; path = Classes/RTVibrate.m; sourceTree = "<group>"; };
+		09CF74E1175C5C0E00FE79B3 /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
+		09D38DE615E4C08400527B00 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
+		09F3FB4F17C76C1500DC8CCB /* crypt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = crypt.h; path = Classes/zipArchive/crypt.h; sourceTree = "<group>"; };
+		09F3FB5017C76C1500DC8CCB /* ioapi.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = ioapi.c; path = Classes/zipArchive/ioapi.c; sourceTree = "<group>"; };
+		09F3FB5117C76C1500DC8CCB /* ioapi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ioapi.h; path = Classes/zipArchive/ioapi.h; sourceTree = "<group>"; };
+		09F3FB5217C76C1500DC8CCB /* mztools.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = mztools.c; path = Classes/zipArchive/mztools.c; sourceTree = "<group>"; };
+		09F3FB5317C76C1500DC8CCB /* mztools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = mztools.h; path = Classes/zipArchive/mztools.h; sourceTree = "<group>"; };
+		09F3FB5417C76C1500DC8CCB /* SSZipArchive.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SSZipArchive.h; path = Classes/zipArchive/SSZipArchive.h; sourceTree = "<group>"; };
+		09F3FB5517C76C1500DC8CCB /* SSZipArchive.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SSZipArchive.m; path = Classes/zipArchive/SSZipArchive.m; sourceTree = "<group>"; };
+		09F3FB5617C76C1500DC8CCB /* unzip.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = unzip.c; path = Classes/zipArchive/unzip.c; sourceTree = "<group>"; };
+		09F3FB5717C76C1500DC8CCB /* unzip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = unzip.h; path = Classes/zipArchive/unzip.h; sourceTree = "<group>"; };
+		09F3FB5817C76C1500DC8CCB /* zip.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = zip.c; path = Classes/zipArchive/zip.c; sourceTree = "<group>"; };
+		09F3FB5917C76C1500DC8CCB /* zip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = zip.h; path = Classes/zipArchive/zip.h; sourceTree = "<group>"; };
+		09F3FB5A17C76C1500DC8CCB /* ZipArchive.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZipArchive.h; path = Classes/zipArchive/ZipArchive.h; sourceTree = "<group>"; };
+		09F3FB5B17C76C1500DC8CCB /* ZipArchive.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = ZipArchive.mm; path = Classes/zipArchive/ZipArchive.mm; sourceTree = "<group>"; };
+		09FBAF6C1754422B001CF0EC /* RTBluetooth.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RTBluetooth.h; path = Classes/RTBluetooth.h; sourceTree = "<group>"; };
+		09FBAF6D1754422B001CF0EC /* RTBluetooth.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RTBluetooth.m; path = Classes/RTBluetooth.m; sourceTree = "<group>"; };
+		09FBB0F317548255001CF0EC /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
+		303258D8136B2C9400982B63 /* SRT.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SRT.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		30325A0B136B343700982B63 /* VERSION */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = VERSION; sourceTree = "<group>"; };
+		3034979A1513D56A0090E688 /* CDVLocalStorage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CDVLocalStorage.h; path = Classes/CDVLocalStorage.h; sourceTree = "<group>"; };
+		3034979B1513D56A0090E688 /* CDVLocalStorage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CDVLocalStorage.m; path = Classes/CDVLocalStorage.m; sourceTree = "<group>"; };
+		30392E4D14F4FCAB00B9E0B8 /* CDVAvailability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CDVAvailability.h; path = Classes/CDVAvailability.h; sourceTree = "<group>"; };
+		3062D11E151D0EDB000D9128 /* UIDevice+Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIDevice+Extensions.h"; path = "Classes/UIDevice+Extensions.h"; sourceTree = "<group>"; };
+		3062D11F151D0EDB000D9128 /* UIDevice+Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIDevice+Extensions.m"; path = "Classes/UIDevice+Extensions.m"; sourceTree = "<group>"; };
+		30956FD0138F1F5600FC3563 /* CDVMotion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CDVMotion.h; path = Classes/CDVMotion.h; sourceTree = "<group>"; };
+		30956FD1138F1F5600FC3563 /* CDVMotion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CDVMotion.m; path = Classes/CDVMotion.m; sourceTree = "<group>"; };
+		30A90B8F14588697006178D3 /* JSONKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JSONKit.h; path = Classes/JSON/JSONKit.h; sourceTree = "<group>"; };
+		30A90B9014588697006178D3 /* JSONKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JSONKit.m; path = Classes/JSON/JSONKit.m; sourceTree = "<group>"; };
+		30C6847E1406CB38004C1A8E /* CDVWhitelist.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CDVWhitelist.h; path = Classes/CDVWhitelist.h; sourceTree = "<group>"; };
+		30C6847F1406CB38004C1A8E /* CDVWhitelist.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CDVWhitelist.m; path = Classes/CDVWhitelist.m; sourceTree = "<group>"; };
+		30E563CD13E217EC00C949AA /* NSMutableArray+QueueAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSMutableArray+QueueAdditions.h"; path = "Classes/NSMutableArray+QueueAdditions.h"; sourceTree = "<group>"; };
+		30E563CE13E217EC00C949AA /* NSMutableArray+QueueAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSMutableArray+QueueAdditions.m"; path = "Classes/NSMutableArray+QueueAdditions.m"; sourceTree = "<group>"; };
+		686357AA141002F100DF4CF2 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		686357AC141002F100DF4CF2 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		686357AE141002F100DF4CF2 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		686357CC14100AAD00DF4CF2 /* AddressBookUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBookUI.framework; path = System/Library/Frameworks/AddressBookUI.framework; sourceTree = SDKROOT; };
+		686357CE14100ADA00DF4CF2 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		686357CF14100ADB00DF4CF2 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		686357D014100ADE00DF4CF2 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		686357D214100AE700DF4CF2 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		686357D414100AF200DF4CF2 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		686357DC14100B1600DF4CF2 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
+		68A32D7414103017006B237C /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
+		8852C43614B65FD800F0E735 /* RTViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RTViewController.h; path = Classes/RTViewController.h; sourceTree = "<group>"; };
+		8852C43714B65FD800F0E735 /* RTViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RTViewController.m; path = Classes/RTViewController.m; sourceTree = "<group>"; };
+		8852C43814B65FD800F0E735 /* RTWebView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RTWebView.h; path = Classes/RTWebView.h; sourceTree = "<group>"; };
+		8852C43914B65FD800F0E735 /* RTWebView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RTWebView.m; path = Classes/RTWebView.m; sourceTree = "<group>"; };
+		8887FD261090FBE7009987E8 /* CDVCamera.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CDVCamera.h; path = Classes/CDVCamera.h; sourceTree = "<group>"; };
+		8887FD271090FBE7009987E8 /* CDVCamera.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CDVCamera.m; path = Classes/CDVCamera.m; sourceTree = "<group>"; };
+		8887FD281090FBE7009987E8 /* NSDictionary+Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSDictionary+Extensions.h"; path = "Classes/NSDictionary+Extensions.h"; sourceTree = "<group>"; };
+		8887FD291090FBE7009987E8 /* NSDictionary+Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSDictionary+Extensions.m"; path = "Classes/NSDictionary+Extensions.m"; sourceTree = "<group>"; };
+		8887FD461090FBE7009987E8 /* CDVLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CDVLocation.h; path = Classes/CDVLocation.h; sourceTree = "<group>"; };
+		8887FD471090FBE7009987E8 /* CDVLocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CDVLocation.m; path = Classes/CDVLocation.m; sourceTree = "<group>"; };
+		8887FD4E1090FBE7009987E8 /* CDVNotification.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CDVNotification.h; path = Classes/CDVNotification.h; sourceTree = "<group>"; };
+		8887FD4F1090FBE7009987E8 /* CDVNotification.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CDVNotification.m; path = Classes/CDVNotification.m; sourceTree = "<group>"; };
+		8887FD501090FBE7009987E8 /* NSData+Base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSData+Base64.h"; path = "Classes/NSData+Base64.h"; sourceTree = "<group>"; };
+		8887FD511090FBE7009987E8 /* NSData+Base64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSData+Base64.m"; path = "Classes/NSData+Base64.m"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		303258D5136B2C9400982B63 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				09B55BB715E4D0BC004204BC /* CoreMedia.framework in Frameworks */,
+				09B55BB615E4D0B1004204BC /* MobileCoreServices.framework in Frameworks */,
+				09B55BB515E4D0A8004204BC /* SystemConfiguration.framework in Frameworks */,
+				09B55BB415E4D09F004204BC /* QuartzCore.framework in Frameworks */,
+				09B55BB215E4D097004204BC /* MediaPlayer.framework in Frameworks */,
+				09B55BB015E4D08B004204BC /* CoreLocation.framework in Frameworks */,
+				09B55BAF15E4D07F004204BC /* AVFoundation.framework in Frameworks */,
+				09B55BAE15E4D079004204BC /* AudioToolbox.framework in Frameworks */,
+				09B55BAC15E4D067004204BC /* AddressBook.framework in Frameworks */,
+				09B55BAD15E4D067004204BC /* AddressBookUI.framework in Frameworks */,
+				09B55BAB15E4D03C004204BC /* MessageUI.framework in Frameworks */,
+				09B55BA915E4D034004204BC /* EventKit.framework in Frameworks */,
+				09D38DE715E4C08400527B00 /* CoreTelephony.framework in Frameworks */,
+				09CF74E2175C5C0E00FE79B3 /* GameKit.framework in Frameworks */,
+				09FBB0F417548255001CF0EC /* CoreBluetooth.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		034768DFFF38A50411DB9C8B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				303258D8136B2C9400982B63 /* SRT.framework */,
+			);
+			name = Products;
+			sourceTree = CORDOVALIB;
+		};
+		0867D691FE84028FC02AAC07 /* CordovaLib */ = {
+			isa = PBXGroup;
+			children = (
+				8887FD101090FB43009987E8 /* Classes */,
+				0867D69AFE84028FC02AAC07 /* Frameworks */,
+				034768DFFF38A50411DB9C8B /* Products */,
+				30325A0B136B343700982B63 /* VERSION */,
+			);
+			name = CordovaLib;
+			sourceTree = "<group>";
+		};
+		0867D69AFE84028FC02AAC07 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				09CF74E1175C5C0E00FE79B3 /* GameKit.framework */,
+				09FBB0F317548255001CF0EC /* CoreBluetooth.framework */,
+				09B55BB315E4D09F004204BC /* QuartzCore.framework */,
+				09B55BB115E4D097004204BC /* MediaPlayer.framework */,
+				09B55BAA15E4D03C004204BC /* MessageUI.framework */,
+				09B55BA815E4D034004204BC /* EventKit.framework */,
+				09D38DE615E4C08400527B00 /* CoreTelephony.framework */,
+				68A32D7414103017006B237C /* AddressBook.framework */,
+				686357DC14100B1600DF4CF2 /* CoreMedia.framework */,
+				686357CE14100ADA00DF4CF2 /* AudioToolbox.framework */,
+				686357CF14100ADB00DF4CF2 /* AVFoundation.framework */,
+				686357D014100ADE00DF4CF2 /* CoreLocation.framework */,
+				686357D214100AE700DF4CF2 /* MobileCoreServices.framework */,
+				686357D414100AF200DF4CF2 /* SystemConfiguration.framework */,
+				686357CC14100AAD00DF4CF2 /* AddressBookUI.framework */,
+				686357AA141002F100DF4CF2 /* UIKit.framework */,
+				686357AC141002F100DF4CF2 /* Foundation.framework */,
+				686357AE141002F100DF4CF2 /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		09C4F001159D98B70025882A /* etc */ = {
+			isa = PBXGroup;
+			children = (
+				3034979A1513D56A0090E688 /* CDVLocalStorage.h */,
+				3034979B1513D56A0090E688 /* CDVLocalStorage.m */,
+				30392E4D14F4FCAB00B9E0B8 /* CDVAvailability.h */,
+				30C6847E1406CB38004C1A8E /* CDVWhitelist.h */,
+				30C6847F1406CB38004C1A8E /* CDVWhitelist.m */,
+				30956FD0138F1F5600FC3563 /* CDVMotion.h */,
+				30956FD1138F1F5600FC3563 /* CDVMotion.m */,
+				8887FD261090FBE7009987E8 /* CDVCamera.h */,
+				8887FD271090FBE7009987E8 /* CDVCamera.m */,
+				8887FD461090FBE7009987E8 /* CDVLocation.h */,
+				8887FD471090FBE7009987E8 /* CDVLocation.m */,
+				8887FD4E1090FBE7009987E8 /* CDVNotification.h */,
+				8887FD4F1090FBE7009987E8 /* CDVNotification.m */,
+			);
+			name = etc;
+			sourceTree = "<group>";
+		};
+		3054098714B77FF3009841CA /* Cleaver */ = {
+			isa = PBXGroup;
+			children = (
+				09C1B08115F58F4A006B6DA1 /* ChildBrowserViewController.h */,
+				09C1B08215F58F4A006B6DA1 /* ChildBrowserViewController.m */,
+				09C1B07915F58F00006B6DA1 /* AppDelegate.h */,
+				09C1B07A15F58F00006B6DA1 /* AppDelegate.m */,
+				09C1B07B15F58F00006B6DA1 /* MainViewController.h */,
+				09C1B07C15F58F00006B6DA1 /* MainViewController.m */,
+				8852C43614B65FD800F0E735 /* RTViewController.h */,
+				8852C43714B65FD800F0E735 /* RTViewController.m */,
+				8852C43814B65FD800F0E735 /* RTWebView.h */,
+				8852C43914B65FD800F0E735 /* RTWebView.m */,
+			);
+			name = Cleaver;
+			sourceTree = "<group>";
+		};
+		888700D710922F56009987E8 /* Commands */ = {
+			isa = PBXGroup;
+			children = (
+				09C5D588161E9BFC0017C7B3 /* RT.h */,
+				09C5D589161E9BFC0017C7B3 /* RTAccelerometer.h */,
+				09C5D58A161E9BFC0017C7B3 /* RTAccelerometer.m */,
+				09C5D58B161E9BFC0017C7B3 /* RTAppLauncher.h */,
+				09C5D58C161E9BFC0017C7B3 /* RTAppLauncher.m */,
+				09C5D58D161E9BFC0017C7B3 /* RTBattery.h */,
+				09C5D58E161E9BFC0017C7B3 /* RTBattery.m */,
+				09FBAF6C1754422B001CF0EC /* RTBluetooth.h */,
+				09FBAF6D1754422B001CF0EC /* RTBluetooth.m */,
+				09C5D58F161E9BFC0017C7B3 /* RTCalendar.h */,
+				09C5D590161E9BFC0017C7B3 /* RTCalendar.m */,
+				09C5D591161E9BFC0017C7B3 /* RTCapture.h */,
+				09C5D592161E9BFC0017C7B3 /* RTCapture.m */,
+				09C5D593161E9BFC0017C7B3 /* RTChildBrowserCommand.h */,
+				09C5D594161E9BFC0017C7B3 /* RTChildBrowserCommand.m */,
+				09C5D595161E9BFC0017C7B3 /* RTCommandDelegate.h */,
+				09C5D596161E9BFC0017C7B3 /* RTConnection.h */,
+				09C5D597161E9BFC0017C7B3 /* RTConnection.m */,
+				09C5D598161E9BFC0017C7B3 /* RTContact.h */,
+				09C5D599161E9BFC0017C7B3 /* RTContact.m */,
+				09C5D59A161E9BFC0017C7B3 /* RTContacts.h */,
+				09C5D59B161E9BFC0017C7B3 /* RTContacts.m */,
+				09C5D59C161E9BFC0017C7B3 /* RTDebug.h */,
+				09C5D59D161E9BFC0017C7B3 /* RTDebugConsole.h */,
+				09C5D59E161E9BFC0017C7B3 /* RTDebugConsole.m */,
+				09C5D59F161E9BFC0017C7B3 /* RTDeviceStatus.h */,
+				09C5D5A0161E9BFC0017C7B3 /* RTDeviceStatus.m */,
+				09C5D5A1161E9BFC0017C7B3 /* RTFile.h */,
+				09C5D5A2161E9BFC0017C7B3 /* RTFile.m */,
+				09C5D5A3161E9BFC0017C7B3 /* RTFileTransfer.h */,
+				09C5D5A4161E9BFC0017C7B3 /* RTFileTransfer.m */,
+				09C5D5A5161E9BFC0017C7B3 /* RTHumiditySensor.h */,
+				09C5D5A6161E9BFC0017C7B3 /* RTHumiditySensor.m */,
+				09C5D5A7161E9BFC0017C7B3 /* RTInvokedUrlCommand.h */,
+				09C5D5A8161E9BFC0017C7B3 /* RTInvokedUrlCommand.m */,
+				09C5D5A9161E9BFC0017C7B3 /* RTLightSensor.h */,
+				09C5D5AA161E9BFC0017C7B3 /* RTLightSensor.m */,
+				09C5D5AB161E9BFC0017C7B3 /* RTLocalNotification.h */,
+				09C5D5AC161E9BFC0017C7B3 /* RTLocalNotification.m */,
+				09C5D5AD161E9BFC0017C7B3 /* RTLogger.h */,
+				09C5D5AE161E9BFC0017C7B3 /* RTLogger.m */,
+				09C5D5AF161E9BFC0017C7B3 /* RTMessaging.h */,
+				09C5D5B0161E9BFC0017C7B3 /* RTMessaging.m */,
+				09C5D5B1161E9BFC0017C7B3 /* RTOrientation.h */,
+				09C5D5B2161E9BFC0017C7B3 /* RTOrientation.m */,
+				09C5D5B3161E9BFC0017C7B3 /* RTPlugin.h */,
+				09C5D5B4161E9BFC0017C7B3 /* RTPlugin.m */,
+				09C5D5B5161E9BFC0017C7B3 /* RTPluginResult.h */,
+				09C5D5B6161E9BFC0017C7B3 /* RTPluginResult.m */,
+				09C5D5B7161E9BFC0017C7B3 /* RTPressureSensor.h */,
+				09C5D5B8161E9BFC0017C7B3 /* RTPressureSensor.m */,
+				09C5D5B9161E9BFC0017C7B3 /* RTProximitySensor.h */,
+				09B869E617CC2ADB006B720A /* RTPreference.h */,
+				09B869E717CC2ADB006B720A /* RTPreference.m */,
+				09C5D5BA161E9BFC0017C7B3 /* RTProximitySensor.m */,
+				09B5939E1779360100E03C8A /* RTPush.h */,
+				09B5939F1779360100E03C8A /* RTPush.m */,
+				09C5D5BB161E9BFC0017C7B3 /* RTReachability.h */,
+				09C5D5BC161E9BFC0017C7B3 /* RTReachability.m */,
+				09C5D5BD161E9BFC0017C7B3 /* RTScreenShot.h */,
+				09C5D5BE161E9BFC0017C7B3 /* RTScreenShot.m */,
+				09C5D5BF161E9BFC0017C7B3 /* RTSound.h */,
+				09C5D5C0161E9BFC0017C7B3 /* RTSound.m */,
+				09C5D5C1161E9BFC0017C7B3 /* RTSplashScreen.h */,
+				09C5D5C2161E9BFC0017C7B3 /* RTSplashScreen.m */,
+				09C5D5C3161E9BFC0017C7B3 /* RTTemperatureSensor.h */,
+				09C5D5C4161E9BFC0017C7B3 /* RTTemperatureSensor.m */,
+				09C5D5C5161E9BFC0017C7B3 /* RTURLProtocol.h */,
+				09C5D5C6161E9BFC0017C7B3 /* RTURLProtocol.m */,
+				09C5D5C7161E9BFC0017C7B3 /* RTVibrate.h */,
+				09C5D5C8161E9BFC0017C7B3 /* RTVibrate.m */,
+			);
+			name = Commands;
+			sourceTree = "<group>";
+		};
+		888700D910923009009987E8 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				09F3FB4F17C76C1500DC8CCB /* crypt.h */,
+				09F3FB5017C76C1500DC8CCB /* ioapi.c */,
+				09F3FB5117C76C1500DC8CCB /* ioapi.h */,
+				09F3FB5217C76C1500DC8CCB /* mztools.c */,
+				09F3FB5317C76C1500DC8CCB /* mztools.h */,
+				09F3FB5417C76C1500DC8CCB /* SSZipArchive.h */,
+				09F3FB5517C76C1500DC8CCB /* SSZipArchive.m */,
+				09F3FB5617C76C1500DC8CCB /* unzip.c */,
+				09F3FB5717C76C1500DC8CCB /* unzip.h */,
+				09F3FB5817C76C1500DC8CCB /* zip.c */,
+				09F3FB5917C76C1500DC8CCB /* zip.h */,
+				09F3FB5A17C76C1500DC8CCB /* ZipArchive.h */,
+				09F3FB5B17C76C1500DC8CCB /* ZipArchive.mm */,
+				30A90B8F14588697006178D3 /* JSONKit.h */,
+				30A90B9014588697006178D3 /* JSONKit.m */,
+				3062D11E151D0EDB000D9128 /* UIDevice+Extensions.h */,
+				3062D11F151D0EDB000D9128 /* UIDevice+Extensions.m */,
+				8887FD281090FBE7009987E8 /* NSDictionary+Extensions.h */,
+				8887FD291090FBE7009987E8 /* NSDictionary+Extensions.m */,
+				30E563CD13E217EC00C949AA /* NSMutableArray+QueueAdditions.h */,
+				30E563CE13E217EC00C949AA /* NSMutableArray+QueueAdditions.m */,
+				8887FD501090FBE7009987E8 /* NSData+Base64.h */,
+				8887FD511090FBE7009987E8 /* NSData+Base64.m */,
+			);
+			name = Util;
+			sourceTree = "<group>";
+		};
+		8887FD101090FB43009987E8 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				3054098714B77FF3009841CA /* Cleaver */,
+				888700D710922F56009987E8 /* Commands */,
+				09C4F001159D98B70025882A /* etc */,
+				888700D910923009009987E8 /* Util */,
+			);
+			name = Classes;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		3032598F136B324700982B63 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				303259AE136B326300982B63 /* NSDictionary+Extensions.h in Headers */,
+				30E563D113E217EC00C949AA /* NSMutableArray+QueueAdditions.h in Headers */,
+				09C1B07D15F58F00006B6DA1 /* AppDelegate.h in Headers */,
+				09C1B07F15F58F00006B6DA1 /* MainViewController.h in Headers */,
+				303259AD136B326300982B63 /* CDVCamera.h in Headers */,
+				303259BC136B326300982B63 /* CDVLocation.h in Headers */,
+				303259BF136B326300982B63 /* CDVNotification.h in Headers */,
+				303259C0136B326300982B63 /* NSData+Base64.h in Headers */,
+				30956FFC138F317200FC3563 /* CDVMotion.h in Headers */,
+				30A90B9214588697006178D3 /* JSONKit.h in Headers */,
+				30C684811406CB38004C1A8E /* CDVWhitelist.h in Headers */,
+				8852C43B14B65FD800F0E735 /* RTViewController.h in Headers */,
+				8852C44014B65FD800F0E735 /* RTWebView.h in Headers */,
+				30392E5014F502C200B9E0B8 /* CDVAvailability.h in Headers */,
+				3062D121151D0EDB000D9128 /* UIDevice+Extensions.h in Headers */,
+				3034979D1513D56A0090E688 /* CDVLocalStorage.h in Headers */,
+				09C1B08315F58F4A006B6DA1 /* ChildBrowserViewController.h in Headers */,
+				09C5D5C9161E9BFC0017C7B3 /* RT.h in Headers */,
+				09C5D5CA161E9BFC0017C7B3 /* RTAccelerometer.h in Headers */,
+				09C5D5CC161E9BFC0017C7B3 /* RTAppLauncher.h in Headers */,
+				09C5D5CE161E9BFC0017C7B3 /* RTBattery.h in Headers */,
+				09C5D5D0161E9BFC0017C7B3 /* RTCalendar.h in Headers */,
+				09C5D5D2161E9BFC0017C7B3 /* RTCapture.h in Headers */,
+				09C5D5D4161E9BFC0017C7B3 /* RTChildBrowserCommand.h in Headers */,
+				09C5D5D6161E9BFC0017C7B3 /* RTCommandDelegate.h in Headers */,
+				09C5D5D7161E9BFC0017C7B3 /* RTConnection.h in Headers */,
+				09C5D5D9161E9BFC0017C7B3 /* RTContact.h in Headers */,
+				09C5D5DB161E9BFC0017C7B3 /* RTContacts.h in Headers */,
+				09C5D5DD161E9BFC0017C7B3 /* RTDebug.h in Headers */,
+				09C5D5DE161E9BFC0017C7B3 /* RTDebugConsole.h in Headers */,
+				09C5D5E0161E9BFC0017C7B3 /* RTDeviceStatus.h in Headers */,
+				09C5D5E2161E9BFC0017C7B3 /* RTFile.h in Headers */,
+				09C5D5E4161E9BFC0017C7B3 /* RTFileTransfer.h in Headers */,
+				09C5D5E6161E9BFC0017C7B3 /* RTHumiditySensor.h in Headers */,
+				09C5D5E8161E9BFC0017C7B3 /* RTInvokedUrlCommand.h in Headers */,
+				09C5D5EA161E9BFC0017C7B3 /* RTLightSensor.h in Headers */,
+				09C5D5EC161E9BFC0017C7B3 /* RTLocalNotification.h in Headers */,
+				09C5D5EE161E9BFC0017C7B3 /* RTLogger.h in Headers */,
+				09C5D5F0161E9BFC0017C7B3 /* RTMessaging.h in Headers */,
+				09C5D5F2161E9BFC0017C7B3 /* RTOrientation.h in Headers */,
+				09C5D5F4161E9BFC0017C7B3 /* RTPlugin.h in Headers */,
+				09C5D5F6161E9BFC0017C7B3 /* RTPluginResult.h in Headers */,
+				09C5D5F8161E9BFC0017C7B3 /* RTPressureSensor.h in Headers */,
+				09C5D5FA161E9BFC0017C7B3 /* RTProximitySensor.h in Headers */,
+				09C5D5FC161E9BFC0017C7B3 /* RTReachability.h in Headers */,
+				09C5D5FE161E9BFC0017C7B3 /* RTScreenShot.h in Headers */,
+				09C5D600161E9BFC0017C7B3 /* RTSound.h in Headers */,
+				09C5D602161E9BFC0017C7B3 /* RTSplashScreen.h in Headers */,
+				09C5D604161E9BFC0017C7B3 /* RTTemperatureSensor.h in Headers */,
+				09C5D606161E9BFC0017C7B3 /* RTURLProtocol.h in Headers */,
+				09C5D608161E9BFC0017C7B3 /* RTVibrate.h in Headers */,
+				09F3FB5C17C76C1500DC8CCB /* crypt.h in Headers */,
+				09F3FB5E17C76C1500DC8CCB /* ioapi.h in Headers */,
+				09F3FB6017C76C1500DC8CCB /* mztools.h in Headers */,
+				09F3FB6117C76C1500DC8CCB /* SSZipArchive.h in Headers */,
+				09F3FB6417C76C1500DC8CCB /* unzip.h in Headers */,
+				09F3FB6617C76C1500DC8CCB /* zip.h in Headers */,
+				09F3FB6717C76C1500DC8CCB /* ZipArchive.h in Headers */,
+				09B593A01779360100E03C8A /* RTPush.h in Headers */,
+				09FBAF6E1754422B001CF0EC /* RTBluetooth.h in Headers */,
+				09B869E817CC2ADB006B720A /* RTPreference.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		303258D7136B2C9400982B63 /* SRT */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 303258DC136B2C9500982B63 /* Build configuration list for PBXNativeTarget "SRT" */;
+			buildPhases = (
+				303258D3136B2C9400982B63 /* Resources */,
+				303258D4136B2C9400982B63 /* Sources */,
+				303258D5136B2C9400982B63 /* Frameworks */,
+				3032598F136B324700982B63 /* Headers */,
+				09C5002915E5F111005B5AC1 /* Copy Files */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SRT;
+			productName = Cordova;
+			productReference = 303258D8136B2C9400982B63 /* SRT.framework */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		0867D690FE84028FC02AAC07 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0430;
+			};
+			buildConfigurationList = 1DEB922208733DC00010E9CD /* Build configuration list for PBXProject "SRTLib" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 1;
+			knownRegions = (
+				English,
+				Japanese,
+				French,
+				German,
+				en,
+			);
+			mainGroup = 0867D691FE84028FC02AAC07 /* CordovaLib */;
+			productRefGroup = 034768DFFF38A50411DB9C8B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				303258D7136B2C9400982B63 /* SRT */,
+				303258E7136B2D4F00982B63 /* UniversalFramework */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		303258D3136B2C9400982B63 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				30325A0C136B343700982B63 /* VERSION in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		303258E6136B2D4F00982B63 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "export CDV_VER=`head -1 ${PROJECT_DIR}/VERSION`\n\n# Config\n\nUFW_TARGET=SRT\n\n\n\n# Defaults\n\n# Default build dir\nUFW_BUILD_DIR=\"./build\"\n\n# Global vars\n\n#if [ ! -z ${BUILD_DIR} ]; then\n## Use the build dir specified by XCode\n#    UFW_BUILD_DIR=\"${BUILD_DIR}\"\n#fi\n\nif [ -z ${SDK_NAME} ]; then\n    # Use the latest iphoneos SDK available\n    UFW_GREP_RESULT=$(xcodebuild -showsdks | grep -o \"iphoneos.*$\")\n    while read -r line; do\n    UFW_SDK_VERSION=\"${line}\"\n    done <<< \"${UFW_GREP_RESULT}\"\nelse\n    # Use the SDK specified by XCode\n    UFW_SDK_VERSION=\"${SDK_NAME}\"\nfi\n\nUFW_SDK_VERSION=$(echo \"${UFW_SDK_VERSION}\" | grep -o \"[0-9].*$\")\nUFW_EXE_FOLDER_PATH=\"${UFW_TARGET}.framework\"\nUFW_EXE_PATH=\"${UFW_EXE_FOLDER_PATH}/${UFW_TARGET}\"\nUFW_IPHONE_DIR=\"${UFW_BUILD_DIR}/Release-iphoneos\"\nUFW_SIMULATOR_DIR=\"${UFW_BUILD_DIR}/Release-iphonesimulator\"\nUFW_UNIVERSAL_DIR=\"${UFW_BUILD_DIR}/Release-universal\"\n\n\n# Build Framework\n\nrm -rf \"${UFW_UNIVERSAL_DIR}\"\n\n#[chisu]dont use armv6 on the ios 6.1 over\nxcodebuild ARCHS=\"armv7\" -target \"${UFW_TARGET}\" -configuration Release -sdk iphoneos${UFW_SDK_VERSION} GCC_PREPROCESSOR_DEFINITIONS=\"CDV_VERSION=${CDV_VER}\" clean build\nif [ \"$?\" != \"0\" ]; then echo >&2 \"Error: xcodebuild failed\"; exit 1; fi\nxcodebuild ARCHS=\"i386\" -target \"${UFW_TARGET}\" -configuration Release -sdk iphonesimulator${UFW_SDK_VERSION} GCC_PREPROCESSOR_DEFINITIONS=\"CDV_VERSION=${CDV_VER}\" clean build\nif [ \"$?\" != \"0\" ]; then echo >&2 \"Error: xcodebuild failed\"; exit 1; fi\n\nif [ ! -f \"${UFW_IPHONE_DIR}/${UFW_EXE_PATH}\" ]; then\necho \"Framework target \\\"${UFW_TARGET}\\\" had no source files to build from. Make sure your source files have the correct target membership\"\nexit 1\nfi\n\nmkdir -p \"${UFW_UNIVERSAL_DIR}\"\nif [ \"$?\" != \"0\" ]; then echo >&2 \"Error: mkdir failed\"; exit 1; fi\n\ncp -a \"${UFW_IPHONE_DIR}/${UFW_EXE_FOLDER_PATH}\" \"${UFW_UNIVERSAL_DIR}/${UFW_EXE_FOLDER_PATH}\"\nif [ \"$?\" != \"0\" ]; then echo >&2 \"Error: cp failed\"; exit 1; fi\n\nlipo -create -output \"${UFW_UNIVERSAL_DIR}/${UFW_EXE_PATH}\" \"${UFW_IPHONE_DIR}/${UFW_EXE_PATH}\" \"${UFW_SIMULATOR_DIR}/${UFW_EXE_PATH}\"\nif [ \"$?\" != \"0\" ]; then echo >&2 \"Error: lipo failed\"; exit 1; fi\n\n\n\t\t\t\t\t";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		303258D4136B2C9400982B63 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				30325990136B325100982B63 /* CDVCamera.m in Sources */,
+				30325991136B325100982B63 /* NSDictionary+Extensions.m in Sources */,
+				3032599E136B325100982B63 /* CDVLocation.m in Sources */,
+				303259A1136B325100982B63 /* CDVNotification.m in Sources */,
+				8852C43D14B65FD800F0E735 /* RTViewController.m in Sources */,
+				303259A2136B325100982B63 /* NSData+Base64.m in Sources */,
+				8852C44214B65FD800F0E735 /* RTWebView.m in Sources */,
+				30956FFD138F317200FC3563 /* CDVMotion.m in Sources */,
+				30E563D213E217EC00C949AA /* NSMutableArray+QueueAdditions.m in Sources */,
+				30C684831406CB38004C1A8E /* CDVWhitelist.m in Sources */,
+				30A90B9414588697006178D3 /* JSONKit.m in Sources */,
+				3034979F1513D56A0090E688 /* CDVLocalStorage.m in Sources */,
+				3062D123151D0EDB000D9128 /* UIDevice+Extensions.m in Sources */,
+				09C1B07E15F58F00006B6DA1 /* AppDelegate.m in Sources */,
+				09C1B08015F58F00006B6DA1 /* MainViewController.m in Sources */,
+				09C1B08415F58F4A006B6DA1 /* ChildBrowserViewController.m in Sources */,
+				09C5D5CB161E9BFC0017C7B3 /* RTAccelerometer.m in Sources */,
+				09C5D5CD161E9BFC0017C7B3 /* RTAppLauncher.m in Sources */,
+				09C5D5CF161E9BFC0017C7B3 /* RTBattery.m in Sources */,
+				09C5D5D1161E9BFC0017C7B3 /* RTCalendar.m in Sources */,
+				09C5D5D3161E9BFC0017C7B3 /* RTCapture.m in Sources */,
+				09C5D5D5161E9BFC0017C7B3 /* RTChildBrowserCommand.m in Sources */,
+				09C5D5D8161E9BFC0017C7B3 /* RTConnection.m in Sources */,
+				09C5D5DA161E9BFC0017C7B3 /* RTContact.m in Sources */,
+				09C5D5DC161E9BFC0017C7B3 /* RTContacts.m in Sources */,
+				09C5D5DF161E9BFC0017C7B3 /* RTDebugConsole.m in Sources */,
+				09C5D5E1161E9BFC0017C7B3 /* RTDeviceStatus.m in Sources */,
+				09C5D5E3161E9BFC0017C7B3 /* RTFile.m in Sources */,
+				09C5D5E5161E9BFC0017C7B3 /* RTFileTransfer.m in Sources */,
+				09C5D5E7161E9BFC0017C7B3 /* RTHumiditySensor.m in Sources */,
+				09C5D5E9161E9BFC0017C7B3 /* RTInvokedUrlCommand.m in Sources */,
+				09C5D5EB161E9BFC0017C7B3 /* RTLightSensor.m in Sources */,
+				09C5D5ED161E9BFC0017C7B3 /* RTLocalNotification.m in Sources */,
+				09C5D5EF161E9BFC0017C7B3 /* RTLogger.m in Sources */,
+				09C5D5F1161E9BFC0017C7B3 /* RTMessaging.m in Sources */,
+				09C5D5F3161E9BFC0017C7B3 /* RTOrientation.m in Sources */,
+				09C5D5F5161E9BFC0017C7B3 /* RTPlugin.m in Sources */,
+				09C5D5F7161E9BFC0017C7B3 /* RTPluginResult.m in Sources */,
+				09C5D5F9161E9BFC0017C7B3 /* RTPressureSensor.m in Sources */,
+				09C5D5FB161E9BFC0017C7B3 /* RTProximitySensor.m in Sources */,
+				09C5D5FD161E9BFC0017C7B3 /* RTReachability.m in Sources */,
+				09C5D5FF161E9BFC0017C7B3 /* RTScreenShot.m in Sources */,
+				09C5D601161E9BFC0017C7B3 /* RTSound.m in Sources */,
+				09C5D603161E9BFC0017C7B3 /* RTSplashScreen.m in Sources */,
+				09C5D605161E9BFC0017C7B3 /* RTTemperatureSensor.m in Sources */,
+				09C5D607161E9BFC0017C7B3 /* RTURLProtocol.m in Sources */,
+				09C5D609161E9BFC0017C7B3 /* RTVibrate.m in Sources */,
+				09FBAF6F1754422B001CF0EC /* RTBluetooth.m in Sources */,
+				09B593A11779360100E03C8A /* RTPush.m in Sources */,
+				09F3FB5D17C76C1500DC8CCB /* ioapi.c in Sources */,
+				09F3FB5F17C76C1500DC8CCB /* mztools.c in Sources */,
+				09F3FB6217C76C1500DC8CCB /* SSZipArchive.m in Sources */,
+				09F3FB6317C76C1500DC8CCB /* unzip.c in Sources */,
+				09F3FB6517C76C1500DC8CCB /* zip.c in Sources */,
+				09F3FB6817C76C1500DC8CCB /* ZipArchive.mm in Sources */,
+				09B869E917CC2ADB006B720A /* RTPreference.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		1DEB922308733DC00010E9CD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = armv6;
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = "";
+				GCC_THUMB_SUPPORT = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_CFLAGS = "-DDEBUG";
+				OTHER_LDFLAGS = (
+					"-all_load",
+					"-ObjC",
+				);
+				PRODUCT_NAME = SRT.framework;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				USER_HEADER_SEARCH_PATHS = "";
+				VALID_ARCHS = "i386 armv6";
+			};
+			name = Debug;
+		};
+		1DEB922408733DC00010E9CD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = armv6;
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_PREPROCESSOR_DEFINITIONS = "";
+				GCC_THUMB_SUPPORT = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_LDFLAGS = (
+					"-all_load",
+					"-ObjC",
+				);
+				PRODUCT_NAME = SRT.framework;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALID_ARCHS = "i386 armv6";
+			};
+			name = Release;
+		};
+		303258DA136B2C9500982B63 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: chisu An (K75AMLP2NQ)";
+				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+				);
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_THUMB_SUPPORT = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				INFOPLIST_FILE = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 3.0;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/Classes/leveldb\"/**",
+					"\"$(SRCROOT)/Classes/leveldb\"",
+				);
+				LINK_WITH_STANDARD_LIBRARIES = NO;
+				MACH_O_TYPE = mh_object;
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_LDFLAGS = "";
+				PRODUCT_NAME = SRT;
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "074C0E12-C4C9-4101-AC86-4D8A94AED92D";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALID_ARCHS = "armv6 armv7 i386";
+				WRAPPER_EXTENSION = framework;
+			};
+			name = Debug;
+		};
+		303258DB136B2C9500982B63 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: chisu An (K75AMLP2NQ)";
+				COPY_PHASE_STRIP = YES;
+				DEAD_CODE_STRIPPING = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+				);
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_THUMB_SUPPORT = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				INFOPLIST_FILE = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 3.0;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/Classes/leveldb\"/**",
+					"\"$(SRCROOT)/Classes/leveldb\"",
+				);
+				LINK_WITH_STANDARD_LIBRARIES = NO;
+				MACH_O_TYPE = mh_object;
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_LDFLAGS = "";
+				PRODUCT_NAME = SRT;
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "074C0E12-C4C9-4101-AC86-4D8A94AED92D";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALID_ARCHS = "armv6 armv7 i386";
+				WRAPPER_EXTENSION = framework;
+				ZERO_LINK = NO;
+			};
+			name = Release;
+		};
+		303258E8136B2D4F00982B63 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"ARCHS[arch=*]" = "$(ARCHS_STANDARD_32_BIT)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: chisu An (K75AMLP2NQ)";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = DEBUG;
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_THUMB_SUPPORT = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 3.0;
+				OTHER_LDFLAGS = "";
+				PRODUCT_NAME = UniversalFramework;
+				PROVISIONING_PROFILE = "074C0E12-C4C9-4101-AC86-4D8A94AED92D";
+				SDKROOT = iphoneos;
+				VALID_ARCHS = "";
+			};
+			name = Debug;
+		};
+		303258E9136B2D4F00982B63 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: chisu An (K75AMLP2NQ)";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_THUMB_SUPPORT = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				IPHONEOS_DEPLOYMENT_TARGET = 3.0;
+				OTHER_LDFLAGS = "";
+				PRODUCT_NAME = UniversalFramework;
+				PROVISIONING_PROFILE = "074C0E12-C4C9-4101-AC86-4D8A94AED92D";
+				VALID_ARCHS = "";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1DEB922208733DC00010E9CD /* Build configuration list for PBXProject "SRTLib" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1DEB922308733DC00010E9CD /* Debug */,
+				1DEB922408733DC00010E9CD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		303258DC136B2C9500982B63 /* Build configuration list for PBXNativeTarget "SRT" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				303258DA136B2C9500982B63 /* Debug */,
+				303258DB136B2C9500982B63 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		303258EF136B2D8700982B63 /* Build configuration list for PBXAggregateTarget "UniversalFramework" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				303258E8136B2D4F00982B63 /* Debug */,
+				303258E9136B2D4F00982B63 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 0867D690FE84028FC02AAC07 /* Project object */;
+}
